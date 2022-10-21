@@ -1,0 +1,43 @@
+.homeIccons{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-color: #00a65a;
+    color: white;
+    height: 40px;
+    width: 50px;
+    
+
+}
+.Forget_Password{
+    background: none;
+    color: red;
+}
+.logingBackground{
+    background-color: rgba(245, 245, 245, 0.788);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content option {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content option:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }

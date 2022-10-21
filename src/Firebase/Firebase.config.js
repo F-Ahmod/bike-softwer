@@ -1,9 +1,9 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyB8wy7u4lG_GTzxrY4ZV7-Ff5wE91AtWgs",
-    authDomain: "pj-club-c9941.firebaseapp.com",
-    projectId: "pj-club-c9941",
-    storageBucket: "pj-club-c9941.appspot.com",
-    messagingSenderId: "147293205054",
-    appId: "1:147293205054:web:ce939c32c5b8ab59a4576f"
-  };
+  apiKey: "AIzaSyBqJHuKD2RA0muYNWUkXt_2h2JxHS-IRvY",
+  authDomain: "bike-software-42891.firebaseapp.com",
+  projectId: "bike-software-42891",
+  storageBucket: "bike-software-42891.appspot.com",
+  messagingSenderId: "965921569911",
+  appId: "1:965921569911:web:5a21d1626f898a35b91a72"
+};
   export default firebaseConfig;

@@ -1,16 +1,28 @@
 .input-field{
     width: 100%;
     margin-bottom: 15px;
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding:  8px;
+    border: 1px solid rgb(228, 178, 178);
+    
 
 }
 .submit-button{
     margin-top: 10px;
-    padding: 14px;
+    padding: 7px;
     border-radius: 5px;
     width: 100%;
-    background-color: rgb(74, 187, 74);
+    color: white;
+    background-color: #00a65a;
     border: none;
+    box-shadow: 0 3px #999;
+}
+.register{
+
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 2px;
+    width: 100%;
+   
 }

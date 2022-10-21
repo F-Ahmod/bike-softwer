@@ -1,4 +1,8 @@
 import React from "react";
+import "./Login.css";
+import { AiOutlineHome } from "react-icons/ai";
+import { GrUserManager } from "react-icons/gr";
+import img from "../images/logo (1).png";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import useFirebase from "../../../Firebase/useFirebase";
 import { useForm } from "react-hook-form";
@@ -18,41 +22,65 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="mt-5 mb-3 mx-auto p-3 rounded"
-      style={{ backgroundColor: "#fff", width: "350px" }}
-    >
-      <h5>Login</h5>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className="input-field "
-          name="email"
-          placeholder="Email"
-          type="email"
-          {...register("email", { required: true })}
-        />
+    <div className="">
+      <div
+        className="mt-3 mb-3 mx-auto  rounded  logingBackground"
+        style={{ width: "350px" }}
+      >
+        <p className="homeIccons">
+          <AiOutlineHome className="" />
+        </p>
         <br />
-        <input
-          className="input-field "
-          name="password"
-          type="password"
-          placeholder="Password"
-          {...register("password", { required: true })}
+        <img
+          className="p-3"
+          style={{ width: "80%", height: "90px" }}
+          src={img}
+          alt=""
         />
-        <br />
+        <form
+          className="p-3 logingBackground"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <input
+            className="input-field "
+            name="email"
+            placeholder="Email"
+            type="email"
+            {...register("email", { required: true })}
+          />
+          <br />
+          <input
+            className="input-field "
+            name="password"
+            type="password"
+            placeholder="Password"
+            {...register("password", { required: true })}
+          />
+          <br />
 
-        <input className="submit-button" type="submit" value="Loging" />
+          <select className="w-100" name="cars" id="cars">
+            <option value="volvo">Select User Type</option>
+            <option value="saab">Admin</option>
+            <option value="opel">Castomer</option>
+            <option value="audi">Mashine</option>
+          </select>
+
+          <input className="submit-button " type="submit" value="SING IN" />
+          <br />
+        </form>
+        <NavLink className="" to="">
+          <button className="Forget_Password">
+            {" "}
+            <GrUserManager />
+            Forget Password
+          </button>
+        </NavLink>
         <br />
-      </form>
-      <NavLink to="/login">
-        <button className="submit-button mb-3" onClick={handleGoogleSignIn}>
-          Google Sign In
-        </button>
-      </NavLink>
-      <br />
-      <NavLink style={{ textDecoration: "none" }} to="/register">
+        {/* <NavLink className="register mb-5" to="/register">
         <button>register</button>
-      </NavLink>
+      </NavLink> */}
+        <br />
+      </div>
     </div>
   );
 };
