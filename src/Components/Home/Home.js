@@ -1,7 +1,7 @@
 import React from 'react';
 import About from './About/About';
 // import Contact from './Contact/Contact';
-import Facilities from './Facilities/Facilities';
+import AllBike from './AllBike/AllBike';
 import Footer from './Footer/Footer';
 import Gallery from './Gallery/Gallery';
 import "./Home.css"
@@ -11,7 +11,7 @@ const Home = () => {
     return (
         <div>
             <About/>
-            <Facilities/>
+            <AllBike/>
             <Gallery/>
             {/* <Contact/> */}
           

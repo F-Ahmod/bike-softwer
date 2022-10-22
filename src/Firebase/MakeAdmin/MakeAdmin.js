@@ -37,7 +37,7 @@ const MakeAdmin = () => {
           {...register("email", { required: true })}
         />
         {msg && (
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success" role="alert">
             {msg}
           </div>
         )}

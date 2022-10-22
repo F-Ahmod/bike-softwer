@@ -7,33 +7,33 @@ import img from "../images/logo2.png";
 const Footer = () => {
   return (
     <div>
-      <footer class="footer-section">
-        <div class="container">
-          <div class="footer-cta mt-3 mb-3">
-            <div class="row">
-              <div class="col-xl-4 col-md-4 mb-30">
-                <div class="single-cta">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="cta-text">
+      <footer className="footer-section">
+        <div className="container">
+          <div className="footer-cta mt-3 mb-3">
+            <div className="row">
+              <div className="col-xl-4 col-md-4 mb-30">
+                <div className="single-cta">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <div className="cta-text">
                     <h4>Fax </h4>
                     <span>0379554085</span>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-md-4 mb-30">
-                <div class="single-cta">
-                  <i class="fas fa-phone"></i>
-                  <div class="cta-text">
+              <div className="col-xl-4 col-md-4 mb-30">
+                <div className="single-cta">
+                  <i className="fas fa-phone"></i>
+                  <div className="cta-text">
                     <h4>Call</h4>
                     <span>0379569991, </span>
                     <span>79569095</span>
                   </div>
                 </div>
               </div>
-              <div class="col-xl-4 col-md-4 mb-30">
-                <div class="single-cta">
-                  <i class="far fa-envelope-open"></i>
-                  <div class="cta-text">
+              <div className="col-xl-4 col-md-4 mb-30">
+                <div className="single-cta">
+                  <i className="far fa-envelope-open"></i>
+                  <div className="cta-text">
                     <h4>E-Mail</h4>
                     <span>kelabpj@hotmail.com</span>
                   </div>
@@ -41,10 +41,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="footer-content mt-2">
-            <div class="row">
-              <div class="col-xl-4 col-lg-4 ">
-                <div class="">
+          <div className="footer-content mt-2">
+            <div className="row">
+              <div className="col-xl-4 col-lg-4 ">
+                <div className="">
                   <Link className="foioterpj" to="/home">
                     <img className="rounded" src={img} alt="" width="40" />{" "}
                     <Navbar.Brand href="/home">
@@ -53,8 +53,8 @@ const Footer = () => {
                   </Link>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                <div class="footer-widget">
+              <div className="col-xl-4 col-lg-4 col-md-6 mb-30">
+                <div className="footer-widget">
                   <ul>
                     <li>
                       <Link to="/">Home</Link>
@@ -71,9 +71,9 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div class="col-xl-4 col-lg-4 col-md-6">
-                <div class="footer-widget">
-                  <div class="">
+              <div className="col-xl-4 col-lg-4 col-md-6">
+                <div className="footer-widget">
+                  <div className="">
                     <Col>
                       <iframe
                         className="map"
@@ -89,17 +89,17 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="copyright-area">
-          <div class="container">
+        <div className="copyright-area">
+          <div className="container">
             
-              <div class="mx-auto copyright-text">
+              <div className="mx-auto copyright-text">
                 <p>
                   Copyright &copy; 2022, All Right Reserved{" "}
                   <a href="#">PJ-club</a>
                 </p>
               </div>
-              {/* <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                <div class="footer-menu">
+              {/* <div className="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                <div className="footer-menu">
                   <ul>
                     <li>
                       <a href="#">Home</a>

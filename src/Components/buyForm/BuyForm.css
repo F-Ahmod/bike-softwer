@@ -1,0 +1,13 @@
+.buyForm form{
+    display: inline;
+    align-items: baseline;
+}
+.buyForm form input{
+    /* width: 40%; */
+    margin-bottom: 10px;
+
+}
+/* .buyForm{
+
+    background-color: white;
+} */

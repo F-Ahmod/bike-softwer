@@ -7,6 +7,7 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "firebase/auth";
 
 import { useEffect, useState } from "react";

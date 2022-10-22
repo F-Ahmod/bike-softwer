@@ -16,7 +16,7 @@ const About = () => {
       {/* <div className="">
         <nav
           id="findmore"
-          class="navbar navbar-expand-lg navbar-light bg-light"
+          className="navbar navbar-expand-lg navbar-light bg-light"
         >
           <div className="container-fluid">
             <div

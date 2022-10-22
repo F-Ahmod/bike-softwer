@@ -31,9 +31,9 @@ const Header = () => {
                 {" "}
                 Das2{" "}
               </Link>
-              {/* <Link className="nav-link active" to="/facilities">
+              {/* <Link className="nav-link active" to="/AllBike">
                 {" "}
-                Facilities{" "}
+                AllBike{" "}
               </Link> */}
               {/* <Link className="nav-link active" to="/gallery">
                 {" "}
