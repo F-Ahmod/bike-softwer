@@ -7,46 +7,51 @@ const AllBike = () => {
   const [loding, setLoding] = useState(false);
   const [plans, setPlans] = useState([]);
 
+const reamingData=(id)=>{
+  setPlans(plans.filter(plan => plan._id !== id))
+}
+
+const loadData = async () => {
+  setLoding(true);
+  fetch("https://bike-soft.herokuapp.com/addBikes")
+    .then((data) => data.json())
+    .then((res) => {
+      setPlans(res);
+      setLoding(false);
+    });
+}
+
   useEffect(() => {
-    setLoding(true);
-    fetch("http://localhost:5000/addBikes")
-      .then((data) => data.json())
-      .then((res) => {
-        setPlans(res);
-        setLoding(false);
-      });
+    loadData();
   }, []);
   return (
-    <div className="mt-5 p-5">
-      {loding && <h3 className="text-center mt-5">Loading...</h3>}
-      <div className="card shadow border-0 mb-7">
-        <div className="card-header">
-          <h5 className="mb-0">Applications</h5>
+    <div class="mt-5 p-5">
+      { loding ? <h3 class="ml-3 mt-5">Loading...</h3>
+      :
+      <div class="card shadow border-0 mb-7">
+        <div class="card-header">
+          <h5 class="mb-0">Applications</h5>
         </div>
-        <div className="table-responsive">
-          <table className="table table-hover ">
-            <thead className="thead-light">
-              <th className="ps-5" scope="col">Name</th>
+        <div class="table-responsive">
+          <table class="table table-hover ">
+            <thead class="thead-light">
+              <th class="ps-5" scope="col">Name</th>
 
-              <th className="d-flex justify-content-end" scope="col"
+              <th class="d-flex justify-content-end" scope="col"
               style={{paddingRight:"60px"}}>
                 Action
               </th>
             </thead>
             <tbody>
               {plans?.map((plan) => (
-                <Plans plan={plan}></Plans>
+                <Plans loadData={loadData} reamingData={reamingData} plan={plan}></Plans>
               ))}
             </tbody>
           </table>
         </div>
-        {/* <div className="card-footer border-0 py-5">
-              <span className="text-muted text-sm">
-                Showing 10 items out of 250 results found
-              </span>
-            </div> */}
+        
       </div>
-    
+    }
     </div>
   );
 };

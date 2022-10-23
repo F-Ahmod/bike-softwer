@@ -12,39 +12,39 @@ const About = () => {
     });
   }, []);
   return (
-    <div className="row  mt-3 mb-5">
-      {/* <div className="">
+    <div class="row  mt-3 mb-5">
+      {/* <div class="">
         <nav
           id="findmore"
-          className="navbar navbar-expand-lg navbar-light bg-light"
+          class="navbar navbar-expand-lg navbar-light bg-light"
         >
-          <div className="container-fluid">
+          <div class="container-fluid">
             <div
-              className="collapse navbar-collapse d-flex justify-content-center "
+              class="collapse navbar-collapse d-flex justify-content-center "
               id="navbarNa">
               
               <div>
-              <h5 className="text-light" data-aos="fade-up-left ">--Welcome--</h5>
+              <h5 class="text-light" data-aos="fade-up-left ">--Welcome--</h5>
               <br />
-              <h1 className="text-light" data-aos="fade-up-right  ">The Home Of PJ Club</h1>
+              <h1 class="text-light" data-aos="fade-up-right  ">The Home Of PJ Club</h1>
               </div>
             </div>
           </div>
         </nav>
       </div>
 
-      <div className="col-md-5 d-flex align-items-cente ">
-        <img src={img2} className="p-3 d-block w-100 rounded" alt="..." />
+      <div class="col-md-5 d-flex align-items-cente ">
+        <img src={img2} class="p-3 d-block w-100 rounded" alt="..." />
       </div>
 
-      <div className="col-md-7" data-aos="fade-right">
+      <div class="col-md-7" data-aos="fade-right">
         <p>About us</p>
-        <h1 className="text-success mx-auto fs-1" data-aos="fade-up-left">
+        <h1 class="text-success mx-auto fs-1" data-aos="fade-up-left">
           PJ Club is The Best for Glof and sweeming
         </h1>
         <br />
         <div data-aos="fade-in-left">
-          <p className="text-start">
+          <p class="text-start">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
             laudantium officia fuga delectus nulla hic nam. Libero eum est
             perferendis unde tempore quam architecto alias, placeat ad odit

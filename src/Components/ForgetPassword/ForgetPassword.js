@@ -27,30 +27,30 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center"
+    <div class="d-flex justify-content-center align-items-center"
     style={{height: "100vh"}}>
       <div
-        className="  rounded  logingBackground"
+        class="  rounded  logingBackground"
         style={{ width: "350px" }}
       >
-        <p className="homeIccons">
+        <p class="homeIccons">
         <a href="/" >
-          <AiOutlineHome className="" />
+          <AiOutlineHome class="" />
         </a>
         </p>
         <br />
         <img
-          className="p-3"
+          class="p-3"
           style={{ width: "80%", height: "90px" }}
           src="https://i.ibb.co/VMVjmm6/logo-1.png"
           alt=""
         />
         <form
-          className="p-3 logingBackground"
+          class="p-3 logingBackground"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
-            className="input-field "
+            class="input-field "
             name="email"
             placeholder="Email"
             type="email"
@@ -59,17 +59,17 @@ const ForgetPassword = () => {
 
           <br />
 
-          {/* <select className="w-100" name="cars" id="cars">
+          {/* <select class="w-100" name="cars" id="cars">
             <option value="volvo">Select User Type</option>
             <option value="saab">Admin</option>
             <option value="opel">Castomer</option>
             <option value="audi">Mashine</option>
           </select> */}
 
-          <input className="submit-button " type="submit" value="SUBMIT" />
+          <input class="submit-button " type="submit" value="SUBMIT" />
           <Link to="/login">
             <input
-              className="submit-button "
+              class="submit-button "
               type="submit"
               value="BACK TO LOGIN"
             />
@@ -78,7 +78,7 @@ const ForgetPassword = () => {
         </form>
 
         <br />
-        {/* <NavLink className="register mb-5" to="/register">
+        {/* <NavLink class="register mb-5" to="/register">
         <button>register</button>
       </NavLink> */}
         <br />

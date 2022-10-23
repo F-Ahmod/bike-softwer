@@ -16,10 +16,10 @@ const Member = () => {
     console.log(data);
   };
   return (
-    <div className="wrapperr">
-      {/* <form className="fromm" action="#" method="GET">
-        <fieldset className="contact-info">
-          <div className="ccontainer">
+    <div class="wrapperr">
+      {/* <form class="fromm" action="#" method="GET">
+        <fieldset class="contact-info">
+          <div class="ccontainer">
             <legend>Contact Information</legend>
             <p>
               <label for="name">Full Name</label>
@@ -59,18 +59,18 @@ const Member = () => {
 
         
         <NavLink style={{ textDecoration: "none" }} to="/login">
-          <Button className="text-light" variant="text">
+          <Button class="text-light" variant="text">
             Already Register? Please Login
           </Button>
         </NavLink>
       </form> */}
-      <form action="" className="form" onSubmit={handleSubmit(onSubmit)}>
-        <p className="field required">
-          <label className="label required" for="name">
+      <form action="" class="form" onSubmit={handleSubmit(onSubmit)}>
+        <p class="field required">
+          <label class="label required" for="name">
             Full name
           </label>
           <input
-            className="text-input"
+            class="text-input"
             id="name"
             name="name"
             required
@@ -78,12 +78,12 @@ const Member = () => {
             {...register("Name", { required: true })}
           />
         </p>
-        <p className="field required half">
-          <label className="label" for="email">
+        <p class="field required half">
+          <label class="label" for="email">
             E-mail
           </label>
           <input
-            className="text-input"
+            class="text-input"
             id="email"
             name="email"
             required
@@ -91,28 +91,28 @@ const Member = () => {
             {...register("email", { required: true })}
           />
         </p>
-        <p className="field half">
-          <label className="label" for="phone">
+        <p class="field half">
+          <label class="label" for="phone">
             Phone
           </label>
           <input
-            className="text-input"
+            class="text-input"
             id="phone"
             name="phone"
             type="phone"
             {...register("password", { required: true })}
           />
         </p>
-        {/* <p className='field half required error'>
-    <label className='label' for='login'>Login</label>
-    <input className='text-input' id='login' name='login' required type='text' value='mican'/>
+        {/* <p class='field half required error'>
+    <label class='label' for='login'>Login</label>
+    <input class='text-input' id='login' name='login' required type='text' value='mican'/>
   </p> */}
-        <p className="field half required">
-          <label className="label" for="password">
+        <p class="field half required">
+          <label class="label" for="password">
             Password
           </label>
           <input
-            className="text-input"
+            class="text-input"
             id="password"
             name="password"
             required
@@ -123,39 +123,39 @@ const Member = () => {
         <br />
 
         <p>
-          <label className="label">Gender</label>
-          <ul className="options">
-            <li className="option">
+          <label class="label">Gender</label>
+          <ul class="options">
+            <li class="option">
               <input
-                className="option-input"
+                class="option-input"
                 id="option-0"
                 name="option"
                 type="radio"
                 value="0"
                 {...register("password", { required: true })}
               />
-              <label className="option-label" for="option-0">
+              <label class="option-label" for="option-0">
                 Male
               </label>
             </li>
-            <li className="option">
+            <li class="option">
               <input
-                className="option-input"
+                class="option-input"
                 id="option-1"
                 name="option"
                 type="radio"
                 value="1"
                 {...register("password", { required: true })}
               />
-              <label className="option-label" for="option-1">
+              <label class="option-label" for="option-1">
                 female
               </label>
             </li>
           </ul>
         </p>
 
-        <p className="field half">
-          <input className="button" type="submit" value="Send" />
+        <p class="field half">
+          <input class="button" type="submit" value="Send" />
         </p>
       </form>
     </div>

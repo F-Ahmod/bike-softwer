@@ -20,25 +20,25 @@ const Registration = () => {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
+      class="d-flex justify-content-center align-items-center"
       style={{ height: "100vh" }}
     >
-      <div className=" rounded   logingBackground" style={{ width: "350px" }}>
-        <p className="homeIccons">
+      <div class=" rounded   logingBackground" style={{ width: "350px" }}>
+        <p class="homeIccons">
           <a href="/">
-            <AiOutlineHome className="" />
+            <AiOutlineHome class="" />
           </a>
         </p>
         <br />
         <img
-          className="p-3"
+          class="p-3"
           style={{ width: "80%", height: "90px" }}
           src="https://i.ibb.co/VMVjmm6/logo-1.png"
           alt=""
         />
         <form onSubmit={handleSubmit(onSubmit)}>
           <input
-            className="input-field"
+            class="input-field"
             name="Name"
             placeholder="Your Name"
             type="text"
@@ -46,7 +46,7 @@ const Registration = () => {
           />
           <br />
           <input
-            className="input-field "
+            class="input-field "
             name="email"
             placeholder="Email"
             type="email"
@@ -55,7 +55,7 @@ const Registration = () => {
           <br />
 
           <input
-            className="input-field "
+            class="input-field "
             name="password"
             type="password"
             placeholder="Password"
@@ -63,15 +63,15 @@ const Registration = () => {
           />
           <br />
 
-          <input className="submit-button mb-2" type="submit" value="Register" />
+          <input class="submit-button mb-2" type="submit" value="Register" />
 
-          <NavLink className="" to="/login">
-            <button className="Forget_Password">
+          <NavLink class="" to="/login">
+            <button class="Forget_Password">
               IF YOU ALREDY RAGISTER? LOGIN!!
             </button>
           </NavLink>
           {msg && (
-            <div className="alert alert-success" role="alert">
+            <div class="alert alert-success" role="alert">
               {msg}
             </div>
           )}

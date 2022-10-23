@@ -18,28 +18,28 @@ const Login = () => {
 
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
+      class="d-flex justify-content-center align-items-center"
       style={{ height: "100vh" }}
     >
-      <div className=" rounded   logingBackground" style={{ width: "350px" }}>
-        <p className="homeIccons">
+      <div class=" rounded   logingBackground" style={{ width: "350px" }}>
+        <p class="homeIccons">
           <a href="/">
-            <AiOutlineHome className="" />
+            <AiOutlineHome class="" />
           </a>
         </p>
         <br />
         <img
-          className="p-3"
+          class="p-3"
           style={{ width: "80%", height: "90px" }}
           src="https://i.ibb.co/VMVjmm6/logo-1.png"
           alt=""
         />
         <form
-          className="p-3 logingBackground"
+          class="p-3 logingBackground"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
-            className="input-field "
+            class="input-field "
             name="email"
             placeholder="Email"
             type="email"
@@ -47,7 +47,7 @@ const Login = () => {
           />
           <br />
           <input
-            className="input-field"
+            class="input-field"
             name="password"
             type="password"
             placeholder="Password"
@@ -55,24 +55,24 @@ const Login = () => {
           />
           <br />
 
-          <select className="w-100" name="cars" id="cars">
+          <select class="w-100" name="cars" id="cars">
             <option value="volvo">Select User Type</option>
             <option value="saab">Admin</option>
             <option value="opel">Castomer</option>
             <option value="audi">Mashine</option>
           </select>
-          <input className="submit-button " type="submit" value="SING IN" />
+          <input class="submit-button " type="submit" value="SING IN" />
           <br />
         </form>
-        <div className="">
-          <NavLink className="" to="/forgetPassword">
-            <button className="Forget_Password">
+        <div class="">
+          <NavLink class="" to="/forgetPassword">
+            <button class="Forget_Password">
               <GrUserManager />
               Forget Password
             </button>
           </NavLink>
-          <NavLink className="" to="/register">
-            <button className="Forget_Password">
+          <NavLink class="" to="/register">
+            <button class="Forget_Password">
               IF YOU DON'T HAVE ACCOUNT
             </button>
           </NavLink>

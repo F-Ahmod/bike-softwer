@@ -11,16 +11,16 @@ const BookPlan = () => {
     const [value, onChange] = useState(new Date());
 
     useEffect(() => {
-      fetch(`http://localhost:5000/planDetails/${planId}`)
+      fetch(`https://bike-soft.herokuapp.com/planDetails/${planId}`)
         .then((data) => data.json())
         .then((res) => setPlan(res));
     }, [planId]);
   
 
     return (
-        <div className="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center">
 
-          <Calendar style={{height:"100vh"}}  className="calander p-2 mt-5" onChange={onChange} value={value} />
+          <Calendar style={{height:"100vh"}}  class="calander p-2 mt-5" onChange={onChange} value={value} />
 
       </div>
     );

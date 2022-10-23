@@ -13,8 +13,8 @@ const Gallery = () => {
     // }, [])
   return (
     <div>
-      {/* <h4 className='mt-4'>Gallery</h4>
-      <div  className='containerrr ps-5 pe-5'>
+      {/* <h4 class='mt-4'>Gallery</h4>
+      <div  class='containerrr ps-5 pe-5'>
       {
                 gallery.map(gallery => <Gallerys
                     gallery={gallery}

@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
   const onSubmit = (data) => {
     setLoding(true);
-    fetch("http://localhost:5000/makeAdmin", {
+    fetch("https://bike-soft.herokuapp.com/makeAdmin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
@@ -23,25 +23,25 @@ const MakeAdmin = () => {
   return (
     <div
       style={{ width: "90%", }}
-      className="rounded  mt-5 mx-auto"
+      class="rounded  mt-5 mx-auto"
     >
-      {loding && <h3 className="text-center mt-5">Loading...</h3>}
+      {loding && <h3 class="text-center mt-5">Loading...</h3>}
 
-      <form onSubmit={handleSubmit(onSubmit)} className=" ">
+      <form onSubmit={handleSubmit(onSubmit)} class=" ">
         <input
           style={{ width: "80%", background: "#fff"  }}
-          className="makeAdminBottom w-50 d-block p-2"
+          class="makeAdminBottom w-50 d-block p-2"
           name="email"
           placeholder="Email"
           type="email"
           {...register("email", { required: true })}
         />
         {msg && (
-          <div className="alert alert-success" role="alert">
+          <div class="alert alert-success" role="alert">
             {msg}
           </div>
         )}
-        <input className="bott mt-3" type="submit" value="Make a Staf" />
+        <input class="bott mt-3" type="submit" value="Make a Staf" />
       </form>
     </div>
   );

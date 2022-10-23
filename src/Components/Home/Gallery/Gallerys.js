@@ -5,16 +5,16 @@ const Gallerys = ({gallery}) => {
 
 
   return (
-    <div className="">
-      {/* <div className="card  mb-2 img-bg " data-aos="fade-up">
+    <div class="">
+      {/* <div class="card  mb-2 img-bg " data-aos="fade-up">
         <img
           style={{ height: "270px", width: "100%" }}
           src={img}
-          className=" shadow rounded"
+          class=" shadow rounded"
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title text-dark">{name}</h5>
+        <div class="card-body">
+          <h5 class="card-title text-dark">{name}</h5>
         </div>
       </div> */}
       

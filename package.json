@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "react-scripts": "4.0.3",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.6",
@@ -26,6 +27,7 @@
     "react-router": "^6.4.1",
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
+    "sweetalert2": "^11.6.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

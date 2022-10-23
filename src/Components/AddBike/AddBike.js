@@ -2,37 +2,62 @@ import { Button, Badge } from "react-bootstrap";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import Alert from 'react-bootstrap/Alert';
+import Spinner from 'react-bootstrap/Spinner';
 
 const AddBike = () => {
   const { register, handleSubmit } = useForm();
 
-  const [name, setName] = useState("");
   const [msg, setMsg] = useState("");
+  const [isLoading, setIsLoading]  = useState(false)
 
   
 
   const onSubmit =async (data) => {
-    setMsg("Your succes");
-    await axios.post('http://localhost:5000/addBikes ',data)
-    setMsg("Bike Added succesfully");
-    setTimeout(() => setMsg(""), 3000).catch((error) => {});
+    const date =  new Date().toISOString().split('T')[0]
+    setIsLoading(true)
+    await axios.post('https://bike-soft.herokuapp.com/addBikes ',{...data, created_at:date, updated_at:date})
+    setMsg(() =>"Bike Added succesfully");
+    setIsLoading(false)
+    setTimeout(() => setMsg(""), 3000);
   };
 
   return (
     <div
       style={{ width: "90%", background: "#FFFFFF" }}
-      className="rounded shadow-sm mt-5 mx-auto  p-3 "
+      class="rounded shadow-sm mt-5 mx-auto  p-3 "
     >
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           style={{ width: "80%" }}
-          className="input-field"
+          class="input-field"
           {...register("title", { required: true })}
           placeholder="Title"
         />
 <br />
-        <input className="mt-3 buttom" type="submit" />
+    {  
+   isLoading ?
+<Button variant="primary" disabled>
+        <Spinner
+          as="span"
+          animation="grow"
+          size="sm"
+          role="status"
+          aria-hidden="true"
+        />
+        Loading...
+      </Button>
+:
+        <input class="mt-3 buttom" type="submit" />
+      
+      }
       </form>
+{
+  msg &&
+      <Alert variant="success">
+        {msg}
+        </Alert>
+}
     </div>
   );
 };

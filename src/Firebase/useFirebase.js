@@ -61,11 +61,11 @@ const useFirebase = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // fetch(`http://localhost:5000/checkAdmin/${user?.email}`)
+        // fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user?.email}`)
         //   .then((res) => res.json())
         //   .then((data) => setAdmin(data?.role));
       }
-      fetch(`http://localhost:5000/checkAdmin/${user.email}`)
+      fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user.email}`)
     .then(data=>data.json())
     .then(res=>{
       setAdmin(res)
@@ -102,7 +102,7 @@ const useFirebase = () => {
   };
 
   const saveUser = (data) => {
-    fetch("http://localhost:5000/users", {
+    fetch("https://bike-soft.herokuapp.com/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -7,7 +7,7 @@ const ListAlllPurchases = () => {
 
   useEffect(() => {
     setLoding(true);
-    fetch("http://localhost:5000/purchase")
+    fetch("https://bike-soft.herokuapp.com/purchase")
       .then((data) => data.json())
 
       .then((res) => {
@@ -19,9 +19,9 @@ const ListAlllPurchases = () => {
   }, []);
   return (
     <div>
-      {loding && <h3 className="text-center mt-5">Loading...</h3>}
+      {loding && <h3 class="text-center mt-5">Loading...</h3>}
       {/* <div style={{  background: "#FFFFFF" }}
-      className="wrapper p-5 ">
+      class="wrapper p-5 ">
       {
        purchases?.map(purchase => <SingleListPurchase purchase={purchase}>
 
@@ -29,13 +29,13 @@ const ListAlllPurchases = () => {
         
        ) 
       } */}
-      <div className="card shadow border-0 mb-7">
-        <div className="card-header">
-          <h5 className="mb-0">All Purchases</h5>
+      <div class="card shadow border-0 mb-7">
+        <div class="card-header">
+          <h5 class="mb-0">All Purchases</h5>
         </div>
-        <div className="table-responsive">
-          <table className="table table-hover ">
-          <thead className="thead-light">
+        <div class="table-responsive">
+          <table class="table table-hover ">
+          <thead class="thead-light">
                   <tr>
                     <th scope="col">Owner Name</th>
                     <th scope="col">Email</th>
@@ -57,13 +57,9 @@ const ListAlllPurchases = () => {
             </tbody>
           </table>
         </div>
-        {/* <div className="card-footer border-0 py-5">
-              <span className="text-muted text-sm">
-                Showing 10 items out of 250 results found
-              </span>
-            </div> */}
+         
       </div>
-      {/* </div> */}
+     
     </div>
   );
 };

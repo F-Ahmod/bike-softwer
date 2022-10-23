@@ -1,12 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Alert from 'react-bootstrap/Alert';
 import { useForm } from "react-hook-form";
 import "./BuyForm.css";
 
 const BuyForm = () => {
   const [bikes, setBikes] = useState([]);
+const [isLoading,setIsLoading] = useState(false)
+const [message,setMessage] = useState('')
+  
   useEffect(() => {
-    fetch("http://localhost:5000/plans")
+    fetch("https://bike-soft.herokuapp.com/addBikes")
       .then((data) => data.json())
       .then((res) => {
         setBikes(res);
@@ -18,21 +22,25 @@ const BuyForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit =async (data) => {
-   
-    await axios.post('http://localhost:5000/purchase ',data)
+    setIsLoading(true)
+    setMessage('')
+    await axios.post('https://bike-soft.herokuapp.com/purchase ',data)
+    setMessage('Added successfully.')
+    setTimeout(() => setMessage(""),3000)
+    setIsLoading(false)
   };
   console.log(errors);
 
   return (
-    <div className="bg-light mt-5 p-5 p-1">
+    <div class="bg-light mt-5 p-5 p-1">
       <form  onSubmit={handleSubmit(onSubmit)}>
-        <div className="row">
-        <div className="col-6">
+        <div class="row">
+        <div class="col-6">
           <div>
-            <label className="d-block">Owner name</label>
+            <label class="d-block">Owner name</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="text"
               //   placeholder="Owner name"
               {...register("ownerName", { required: true })}
@@ -40,10 +48,10 @@ const BuyForm = () => {
           </div>
 
           <div>
-            <label className="d-block">Mobile number</label>
+            <label class="d-block">Mobile number</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="tel"
               //   placeholder="Mobile number"
               {...register("mobileNumber", {
@@ -53,49 +61,14 @@ const BuyForm = () => {
             />
             {errors.exampleRequired && <span>This field is required</span>}
           </div>
-          {/* <div>
-            <label className="d-block">Company Name</label>
-            <input
-              style={{ width: "100%" }}
-              className=""
-              type="text"
-              {...register("companyName", {
-                required: true
-              
-              })}
-            />
-          </div> */}
-          {/* <div>
-            <label className="d-block">Company licence</label>
-            <input
-              style={{ width: "100%" }}
-              className=""
-              type="text"
-              {...register("companyLicence", {
-                required: true,
-               
-              })}
-            />
-          </div> */}
-          {/* <div>
-            <label className="d-block">Registration Number</label>
-            <input
-              style={{ width: "100%" }}
-              className=""
-              type="text"
-              {...register("registrationNumber", {
-                required: true,
-               
-              })}
-            />
-          </div> */}
+           
 
 <div>
-            <label className="d-block">Addres</label>
+            <label class="d-block">Addres</label>
             <input
               style={{ width: "100%" }}
               type="text"
-              className=""
+              class=""
               {...register("addres", {
                 required: true,
                 
@@ -105,34 +78,26 @@ const BuyForm = () => {
           <hr />
 
          
-          {/* <div>
-            <label className="d-block">Amount</label>
-            <input
-              style={{ width: "100%" }}
-              className=""
-              type="number"
-              {...register("amount", { required: true })}
-            />
-          </div> */}
+         
           
         </div>
-        <div className="col-6">
+        <div class="col-6">
           <div>
-            <label className="d-block">Email</label>
+            <label class="d-block">Email</label>
 
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="text"
               {...register("email", { required: true})}
             />
           </div>
 
           <div>
-            <label className="d-block">National id number</label>
+            <label class="d-block">National id number</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="text"
               {...register("nationalIdNumber", {
                 required: true,
@@ -146,10 +111,10 @@ const BuyForm = () => {
          
 
           <div>
-            <label className="d-block">Modle</label>
+            <label class="d-block">Modle</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="text"
               {...register("modle", { required: true })}
             />
@@ -159,54 +124,49 @@ const BuyForm = () => {
           
         </div>
         </div>
-        <div className="row">
-          <div className="col-6">
+        <div class="row">
+          <div class="col-6">
           <div>
-            <label className="d-block">Bike name</label>
+            <label class="d-block">Bike name</label>
             <select {...register("bikeName")}
              style={{ width: "100%" }}
             >
               {
-              bikes.map(bike =>  <option value={bike.title}>{bike.title}</option>)
+              bikes?.map(bike =>  <option value={bike?.title}>{bike?.title}</option>)
               }
               
             </select>
           </div>
           <div>
-            <label className="d-block">Purchas Date</label>
+            <label class="d-block">Purchas Date</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="date"
               {...register("date", { required: true})}
             />
           </div>
           
           </div>
-          <div className="col-6">
+          <div class="col-6">
           <div>
-            <label className="d-block">RC</label>
-            <input
-              style={{ width: "100%" }}
-              className=""
-              {...register("rc", {  })}
-              type="radio"
-              value="Yes"
-            />
+            <label class="d-block">RC</label>
+      
+          <div className="d-flex align-items-center">
 
-            <input
-              style={{ width: "50%" }}
-              className=""
-              {...register("rc", {  })}
-              type="radio"
-              value="No"
-            />
+          <input type="radio" {...register("rc")} id="yes" name="fav_language" value="Yes" />
+ <label  for="yes" className="ms-2">Yes</label><br/>
+  <input {...register("rc" )}  className="ms-2" type="radio" id="no" name="fav_language"  value="No" />
+  <label for="no">No</label><br/>
+
+          </div>
+           
           </div>
           <div>
-            <label className="d-block">prossed By</label>
+            <label class="d-block">prossed By</label>
             <input
               style={{ width: "100%" }}
-              className=""
+              class=""
               type="text"
               //   placeholder="Owner name"
               {...register("prossedName", { required: true })}
@@ -218,8 +178,20 @@ const BuyForm = () => {
 
         </div>
 
-        <input type="submit" />
+{
+  !isLoading ?
+  <input type="submit" />
+:
+<h6>Loading...</h6>
+}
+
+
       </form>
+
+   {message&&   <Alert variant='success'>
+         {message}
+        </Alert>}
+
     </div>
   );
 };
