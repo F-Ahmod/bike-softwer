@@ -1,6 +1,39 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import ListAlllPurchases from "../ListAlllPurchases/ListAlllPurchases";
 
 const DasHader = () => {
+  const [purchases, setPurchases] = useState([]);
+  const [bikes, setBikes] = useState([]);
+  
+
+  useEffect(() => {
+ 
+    fetch("https://bike-soft.herokuapp.com/purchase")
+      .then((data) => data.json())
+
+      .then((res) => {
+        console.log(res);
+
+        setPurchases(res);
+       
+      });
+  }, []);
+  
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+  
+    const res = await axios.post("https://bike-soft.herokuapp.com/newpurhase", {
+      date: new Date().toISOString().split("T")[0],
+    });
+    setBikes(res.data);
+    
+  };
   return (
     <div>
       <header class="bg-surface-primary border-bottom pt-6">
@@ -11,36 +44,18 @@ const DasHader = () => {
                 <h1 class="h2 mb-0 ls-tight">Bike Manage Dashbord</h1>
               </div>
 
-              <div class="col-sm-6 col-12 text-sm-end">
-                {/* <div class="mx-n1">
-                  <a
-                    href="#"
-                    class="btn d-inline-flex btn-sm btn-neutral border-base mx-1"
-                  >
-                    <span class=" pe-2">
-                      <i class="bi bi-pencil"></i>
-                    </span>
-                    <span>Edit</span>
-                  </a>
-                  <a href="#" class="btn d-inline-flex btn-sm btn-primary mx-1">
-                    <span class=" pe-2">
-                      <i class="bi bi-plus"></i>
-                    </span>
-                    <span>Create</span>
-                  </a>
-                </div> */}
-              </div>
+              <div class="col-sm-6 col-12 text-sm-end"></div>
             </div>
 
             <ul class="nav nav-tabs mt-4 overflow-x border-0">
               <li class="nav-item ">
-                <a href="/AllBike`" class="nav-link active">
-                  All BIKE
-                </a>
+                <Link class="nav-link" to="/buyForm">
+                  <i class="bi bi-people"></i> Purchas
+                </Link>
               </li>
               <li class="nav-item">
                 <a href="/listAlllPurchases" class="nav-link font-regular">
-                List Alll Purchases
+                  List Alll Purchases
                 </a>
               </li>
               <li class="nav-item">
@@ -64,20 +79,20 @@ const DasHader = () => {
                       <span class="h6 font-semibold text-muted text-sm d-block mb-2">
                         All sels
                       </span>
-                      <span class="h3 font-bold mb-0">$7500</span>
+                      <span class="h3 font-bold mb-0">{ purchases.length }</span>
                     </div>
-                    <div class="col-auto">
+                    {/* <div class="col-auto">
                       <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
                         <i class="bi bi-credit-card"></i>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div class="mt-2 mb-0 text-sm">
+                  {/* <div class="mt-2 mb-0 text-sm">
                     <span class="badge badge-pill bg-soft-success text-success me-2">
                       <i class="bi bi-arrow-up me-1"></i>13%
                     </span>
                     <span class="text-nowrap text-xs text-muted">all</span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -89,22 +104,22 @@ const DasHader = () => {
                       <span class="h6 font-semibold text-muted text-sm d-block mb-2">
                         New Bike
                       </span>
-                      <span class="h3 font-bold mb-0">215</span>
+                      <span class="h3 font-bold mb-0">{bikes.length }</span>
                     </div>
-                    <div class="col-auto">
+                    {/* <div class="col-auto">
                       <div class="icon icon-shape bg-primary text-white text-lg rounded-circle">
                         <i class="bi bi-people"></i>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div class="mt-2 mb-0 text-sm">
+                  {/* <div class="mt-2 mb-0 text-sm">
                     <span class="badge badge-pill bg-soft-success text-success me-2">
                       <i class="bi bi-arrow-up me-1"></i>30%
                     </span>
                     <span class="text-nowrap text-xs text-muted">
                       Since last month
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -118,20 +133,20 @@ const DasHader = () => {
                       </span>
                       <span class="h3 font-bold mb-0">1.400</span>
                     </div>
-                    <div class="col-auto">
+                    {/* <div class="col-auto">
                       <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
                         <i class="bi bi-clock-history"></i>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div class="mt-2 mb-0 text-sm">
+                  {/* <div class="mt-2 mb-0 text-sm">
                     <span class="badge badge-pill bg-soft-danger text-danger me-2">
                       <i class="bi bi-arrow-down me-1"></i>-5%
                     </span>
                     <span class="text-nowrap text-xs text-muted">
                       Since last month
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -140,32 +155,35 @@ const DasHader = () => {
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <span class="h6 font-semibold text-muted text-sm d-block mb-2"></span>
-                      <span class="h3 font-bold mb-0">All S</span>
+                    <span class="h6 font-semibold text-muted text-sm d-block mb-2">
+                        All bike
+                      </span>
+                      <span class="h3 font-bold mb-0">1.400</span>
                     </div>
-                    <div class="col-auto">
+                    {/* <div class="col-auto">
                       <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
                         <i class="bi bi-minecart-loaded"></i>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
-                  <div class="mt-2 mb-0 text-sm">
+                  {/* <div class="mt-2 mb-0 text-sm">
                     <span class="badge badge-pill bg-soft-success text-success me-2">
                       <i class="bi bi-arrow-up me-1"></i>10%
                     </span>
                     <span class="text-nowrap text-xs text-muted">
                       Since last month
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
           <div class="card shadow border-0 mb-7">
-            <div class="card-header">
+            {/* <div class="card-header">
               <h5 class="mb-0">Applications</h5>
-            </div>
-            <div class="table-responsive">
+            </div> */}
+            <ListAlllPurchases/>
+            {/* <div class="table-responsive">
               <table class="table table-hover table-nowrap">
                 <thead class="thead-light">
                   <tr>
@@ -580,7 +598,7 @@ const DasHader = () => {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div> */}
             {/* <div class="card-footer border-0 py-5">
               <span class="text-muted text-sm">
                 Showing 10 items out of 250 results found

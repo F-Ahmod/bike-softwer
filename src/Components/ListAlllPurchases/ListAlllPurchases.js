@@ -20,15 +20,7 @@ const ListAlllPurchases = () => {
   return (
     <div>
       {loding && <h3 class="text-center mt-5">Loading...</h3>}
-      {/* <div style={{  background: "#FFFFFF" }}
-      class="wrapper p-5 ">
-      {
-       purchases?.map(purchase => <SingleListPurchase purchase={purchase}>
-
-       </SingleListPurchase>
-        
-       ) 
-      } */}
+      
       <div class="card shadow border-0 mb-7">
         <div class="card-header">
           <h5 class="mb-0">All Purchases</h5>

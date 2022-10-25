@@ -2,10 +2,11 @@ import React from "react";
 
 const SingleListPurchase = ({ purchase }) => {
   console.log(purchase);
-  const { ownerName,email, addres, companyName,nationalIdNumber,registrationNumber,amount,_id,mobileNumber,date,rc,expence,prossedName,modle } = purchase;
+  const { ownerName,email, addres, companyName,nationalIdNumber,registrationNumber,amount,_id,mobileNumber,date,rc,expence,purchasedBy,modle } = purchase;
   return (
   
     <tr>
+   
     <td>
       <p class="text-heading font-semibold">
      {ownerName}
