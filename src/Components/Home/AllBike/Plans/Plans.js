@@ -5,9 +5,10 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import Spinner from 'react-bootstrap/Spinner';
 
+
 const Plans = ({ plan,reamingData, loadData }) => {
  
-  const { title } = plan;
+  const { title ,imageUrls} = plan;
  
   const [updatedName,setUpdatedName] = useState(title || '')
   const [show, setShow] = useState(false);
@@ -66,9 +67,14 @@ const Plans = ({ plan,reamingData, loadData }) => {
           {title}
         </p>
       </td>
+      <td>
+      {imageUrls?.map((url) => {
+          return <img width="100px" height="100%" src={url} alt=""/>;
+        })}
+      </td>
 
       <td class="text-end">
-        
+      
         
       <button
           onClick={handleShow}

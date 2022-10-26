@@ -1,4 +1,5 @@
 import intializeFirebase from "../Firebase/Firebase.init";
+import { getStorage } from "firebase/storage";
 import {
   getAuth,
   signInWithPopup,
@@ -7,13 +8,15 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  sendPasswordResetEmail
+ 
 } from "firebase/auth";
-
+// import firebase from 'firebase';
 import { useEffect, useState } from "react";
 
-intializeFirebase();
 
+const app= intializeFirebase();
+
+ const storage = getStorage(app);
 const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
@@ -61,6 +64,7 @@ const useFirebase = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        // console.log("storate sho",storage);
         // fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user?.email}`)
         //   .then((res) => res.json())
         //   .then((data) => setAdmin(data?.role));
@@ -123,6 +127,7 @@ const useFirebase = () => {
     loginUser,
     authError,
     loading,
+    storage
   };
 };
 

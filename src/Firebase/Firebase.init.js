@@ -1,5 +1,6 @@
 import {initializeApp}from 'firebase/app';
 import firebaseConfig from './Firebase.config';
+//  import { getStorage } from "firebase/storage"
 
 
 const initializeAuthentication =() =>{
@@ -7,3 +8,5 @@ const initializeAuthentication =() =>{
 }
 
 export default initializeAuthentication;
+
+// export const storage = getStorage(initializeAuthentication);

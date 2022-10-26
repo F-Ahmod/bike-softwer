@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Spinner from "react-bootstrap/Spinner";
-//import img from "../images/images (10).jpg"
 import "./AllBike.css";
 import Plans from "./Plans/Plans";
 const AllBike = () => {
@@ -36,6 +34,7 @@ const loadData = async () => {
           <table class="table table-hover ">
             <thead class="thead-light">
               <th class="ps-5" scope="col">Name</th>
+              <th class="ps-5" scope="col">image</th>
 
               <th class="d-flex justify-content-end" scope="col"
               style={{paddingRight:"60px"}}>
