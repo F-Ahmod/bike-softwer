@@ -41,7 +41,7 @@ const DasHader = () => {
           <div class="mb-npx">
             <div class="row align-items-center">
               <div class="col-sm-6 col-12 mb-4 mb-sm-0">
-                <h1 class="h2 mb-0 ls-tight">Bike Manage Dashbord</h1>
+                <h1 class="h2 mb-0 ls-tight">Bike Showroom Management System.</h1>
               </div>
 
               <div class="col-sm-6 col-12 text-sm-end"></div>
@@ -50,7 +50,7 @@ const DasHader = () => {
             <ul class="nav nav-tabs mt-4 overflow-x border-0">
               <li class="nav-item ">
                 <Link class="nav-link" to="/buyForm">
-                  <i class="bi bi-people"></i> Purchas
+                  Purchas
                 </Link>
               </li>
               <li class="nav-item">

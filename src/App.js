@@ -18,6 +18,8 @@ import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import Registration from "./Components/Home/Registration/Registration";
 import AddBike from "./Components/AddBike/AddBike";
 import NewPurchacs from "./Components/NewPurchacs/NewPurchacs";
+import BuyerDetails from "./Firebase/BuyerDetails/BuyerDetails";
+import Invoice from "./Components/Invoice/Invoice";
 
 
 function App() {
@@ -27,11 +29,9 @@ function App() {
       {/* <Header></Header> */}
       <Routes>
         <Route path="#" element={<Home />} />
-        <Route path="/" element={<Deshbord />} />
-        
+        <Route path="/" element={<Deshbord />} />  
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/AllBike" element={<AllBike />} /> */}
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
@@ -45,26 +45,16 @@ function App() {
           <Route index element={<DasHader />} />
           <Route path="dasHader" element={<DasHader />} />
           <Route path="/buyForm" element={<BuyForm />} />
+          <Route path="/BuyerDetails" element={<BuyerDetails />} />
+          <Route path="/invoice" element={<Invoice />} />
           <Route path="/listAlllPurchases" element={<ListAlllPurchases/>} />  
           <Route path="/newPurchacs" element={<NewPurchacs/>} />  
-
           <Route path="/singleListPurchase" element={<SingleListPurchase/>} /> 
           <Route path="AllBike" element={<AllBike />} />
           <Route path="AddBike" element={<AddBike />} />
           {/* <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} /> */}
           <Route path="makeadmin" element={<MakeAdmin />} />
         </Route>
-
-        {/* <Route path="/" element={<Dashbord />}>
-            <Route path="pending" element={<PendingForm />}/>
-            <Route path="AllBike" element={<AllBike />} />
-            <Route path="AddBike" element={<AddBike />} />
-
-            <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} />
-            <Route path="makeadmin" element={ <MakeAdmin /> } />
-          </Route> */}
-
-        {/* <Route path="/SingleProductDetails/:id" element={<Singleproduct />} />  */}
       </Routes>
       {/* </Router> */}
 

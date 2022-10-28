@@ -12,14 +12,14 @@ const Deshbord = () => {
 
   return (
     <div>
-      <div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+      <div className="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
         <nav
-          class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0  navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
+          className="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0  navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
           id="navbarVertical"
         >
-          <div class="container-fluid">
+          <div className="container-fluid">
             <button
-              class="navbar-toggler ms-n2"
+              className="navbar-toggler ms-n2"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#sidebarCollapse"
@@ -27,84 +27,95 @@ const Deshbord = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
 
-            <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+            <a className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh_k-PXFEOg0WLls_i5Fdmv_3xffkwSmi63F-zWlby&s"
                 alt="..."
               />
             </a>
 
-            <div class="navbar-user d-lg-none">
-              <div class="dropdown"></div>
+            <div className="navbar-user d-lg-none">
+              <div className="dropdown"></div>
             </div>
 
-            <div class="collapse navbar-collapse" id="sidebarCollapse">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <Link class="nav-link" to="/dasHader">
-                    <i class="bi bi-people"></i> Home
+            <div className="collapse navbar-collapse" id="sidebarCollapse">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dasHader">
+                    <i className="bi bi-people"></i> Home
                   </Link>
                 </li>
-
-                <li class="nav-item">
-                  <Link class="nav-link" to="/buyForm">
-                    <i class="bi bi-people"></i> Purchas
-                  </Link>
-                </li>
-                {admin && (
-                  <li class="nav-item">
-                   
-                    <Link class="nav-link" to="/makeadmin">
-                      <i class="bi bi-bar-chart"></i> Make Staf
-                    </Link>
-                  </li>
-                )}
               </ul>
 
-              
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>Manage Vechecal</Accordion.Header>
                   <Accordion.Body>
-                    <Link class="nav-link" to="/AllBike">
-                      <i class="bi bi-people"></i> All Bike
+                    <Link className="nav-link" to="/AllBike">
+                      <i className="bi bi-people"></i> All Bike
                     </Link>
-                    <Link class="nav-link" to="/AddBike">
-                      <i class="bi bi-plus"></i> Add bike
+                    <Link className="nav-link" to="/AddBike">
+                      <i className="bi bi-plus"></i> Add bike
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
                   <Accordion.Header>Purchase</Accordion.Header>
                   <Accordion.Body>
-                    <Link class="nav-link" to="/listAlllPurchases">
-                      <i class="bi bi-bag"></i> List all purchases
+                    <Link className="nav-link" to="/listAlllPurchases">
+                      <i className="bi bi-bag"></i> List all purchases
                     </Link>
-                    <Link class="nav-link" to="/newPurchacs">
-                      <i class="bi bi-people"></i> New Purchas
+                    <Link className="nav-link" to="/newPurchacs">
+                      <i className="bi bi-people"></i> New Purchas
+                    </Link>
+                  </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="1">
+                  <Accordion.Header>Bike Sale</Accordion.Header>
+                  <Accordion.Body>
+                    <Link className="nav-link" to="/BuyerDetails">
+                     Buyer details
+                    </Link>
+                    <Link className="nav-link" to="/invoice">
+                     Invoice
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
+              
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/buyForm">
+                    <i className="bi bi-people"></i> Bike Purchase
+                  </Link>
+                </li>
+                {/* {admin && ( */}
+                <li className="nav-item">
+                  <Link className="nav-link" to="/makeadmin">
+                    <i className="bi bi-bar-chart"></i> Make Staf
+                  </Link>
+                </li>
+                {/* )} */}
+              </ul>
 
-              <hr class="navbar-divider opacity-20" />
+              <hr className="navbar-divider opacity-20" />
 
-              <div class="mt-auto"></div>
+              <div className="mt-auto"></div>
 
-              <ul class="navbar-nav">
-                <li class="nav-item">
+              <ul className="navbar-nav">
+                <li className="nav-item">
                   {user?.email ? (
                     <>
-                      <button class="nav-link" onClick={leLogout}>
-                        <i class="bi bi-box-arrow-left"></i> Logout
+                      <button className="nav-link" onClick={leLogout}>
+                        <i className="bi bi-box-arrow-left"></i> Logout
                       </button>
                     </>
                   ) : (
                     <>
-                      <Link class="nav-link active" to="/login">
+                      <Link className="nav-link active" to="/login">
                         <AiOutlineLogin /> Login
                       </Link>
                     </>
@@ -115,7 +126,7 @@ const Deshbord = () => {
           </div>
         </nav>
 
-        <div class="h-screen flex-grow-1 overflow-y-lg-auto">
+        <div className="h-screen flex-grow-1 overflow-y-lg-auto">
           {/* <DasHader/> */}
           <Outlet />
         </div>
