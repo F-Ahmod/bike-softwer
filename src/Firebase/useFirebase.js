@@ -115,7 +115,7 @@ const useFirebase = () => {
       .then((result) => console.log(result));
   };
 
-  console.log(admin);
+  // console.log(admin);
 
   return {
     error,

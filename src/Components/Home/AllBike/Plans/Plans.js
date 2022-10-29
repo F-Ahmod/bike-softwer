@@ -63,7 +63,7 @@ const Plans = ({ plan,reamingData, loadData }) => {
     <> 
     <tr>
       <td>
-        <p class="text-heading font-semibold">
+        <p className="text-heading font-semibold">
           {title}
         </p>
       </td>
@@ -73,23 +73,23 @@ const Plans = ({ plan,reamingData, loadData }) => {
         })}
       </td>
 
-      <td class="text-end">
+      <td className="text-end">
       
         
       <button
           onClick={handleShow}
           type="button"
-          class="btn btn-sm me-2 btn-square btn-neutral text-danger-hover"
+          className="btn btn-sm me-2 btn-square btn-neutral text-danger-hover"
         >
-          <i class="bi bi-pen "></i> 
+          <i className="bi bi-pen "></i> 
         </button>
        
         <button
         onClick={()=> handelDelete(plan._id)}
           type="button"
-          class="btn btn-sm btn-square btn-neutral text-danger-hover"
+          className="btn btn-sm btn-square btn-neutral text-danger-hover"
         >
-          <i class="bi bi-trash"></i> 
+          <i className="bi bi-trash"></i> 
         </button>
       </td>
     </tr>
@@ -102,7 +102,7 @@ const Plans = ({ plan,reamingData, loadData }) => {
 <input
   defaultValue={updatedName}
   onChange={e => setUpdatedName(e.target.value)}
-  className="w-100 d-block"
+  classNameName="w-100 d-block"
   />
 </Modal.Body>
 <Modal.Footer>

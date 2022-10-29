@@ -24,7 +24,7 @@ import Invoice from "./Components/Invoice/Invoice";
 
 function App() {
   return (
-    <div class="App">
+    <div className="App">
       {/* <Router> */}
       {/* <Header></Header> */}
       <Routes>

@@ -37,7 +37,7 @@ const BuyForm = () => {
     setIsLoading(false);
     reset();
   };
-  const imagesListRef = ref(storage, "images/");
+   ref(storage, "images/");
   const uplodFile = () => {
     if (imageUpload == null) return;
     if (imageUrls.length === 4) {

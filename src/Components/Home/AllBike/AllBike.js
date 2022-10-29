@@ -23,20 +23,20 @@ const loadData = async () => {
     loadData();
   }, []);
   return (
-    <div class="mt-5 p-5">
-      { loding ? <h3 class="ml-3 mt-5">Loading...</h3>
+    <div className="mt-5 p-5">
+      { loding ? <h3 className="ml-3 mt-5">Loading...</h3>
       :
-      <div class="card shadow border-0 mb-7">
-        <div class="card-header">
-          <h5 class="mb-0">Applications</h5>
+      <div className="card shadow border-0 mb-7">
+        <div className="card-header">
+          <h5 className="mb-0">Applications</h5>
         </div>
-        <div class="table-responsive">
-          <table class="table table-hover ">
-            <thead class="thead-light">
-              <th class="ps-5" scope="col">Name</th>
-              <th class="ps-5" scope="col">image</th>
+        <div className="table-responsive">
+          <table className="table table-hover ">
+            <thead className="thead-light">
+              <th className="ps-5" scope="col">Name</th>
+              <th className="ps-5" scope="col">image</th>
 
-              <th class="d-flex justify-content-end" scope="col"
+              <th className="d-flex justify-content-end" scope="col"
               style={{paddingRight:"60px"}}>
                 Action
               </th>

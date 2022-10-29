@@ -18,7 +18,7 @@ const ForgetPassword = () => {
   })
   .catch((error) => {
     console.log(error);
-    const errorCode = error.code;
+    //const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
     // ..
@@ -27,30 +27,30 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div class="d-flex justify-content-center align-items-center"
+    <div className="d-flex justify-content-center align-items-center"
     style={{height: "100vh"}}>
       <div
-        class="  rounded  logingBackground"
+        className="  rounded  logingBackground"
         style={{ width: "350px" }}
       >
-        <p class="homeIccons">
+        <p className="homeIccons">
         <a href="/" >
-          <AiOutlineHome class="" />
+          <AiOutlineHome className="" />
         </a>
         </p>
         <br />
         <img
-          class="p-3"
+          className="p-3"
           style={{ width: "80%", height: "90px" }}
           src="https://i.ibb.co/VMVjmm6/logo-1.png"
           alt=""
         />
         <form
-          class="p-3 logingBackground"
+          className="p-3 logingBackground"
           onSubmit={handleSubmit(onSubmit)}
         >
           <input
-            class="input-field "
+            className="input-field "
             name="email"
             placeholder="Email"
             type="email"
@@ -59,17 +59,17 @@ const ForgetPassword = () => {
 
           <br />
 
-          {/* <select class="w-100" name="cars" id="cars">
+          {/* <select className="w-100" name="cars" id="cars">
             <option value="volvo">Select User Type</option>
             <option value="saab">Admin</option>
             <option value="opel">Castomer</option>
             <option value="audi">Mashine</option>
           </select> */}
 
-          <input class="submit-button " type="submit" value="SUBMIT" />
+          <input className="submit-button " type="submit" value="SUBMIT" />
           <Link to="/login">
             <input
-              class="submit-button "
+              className="submit-button "
               type="submit"
               value="BACK TO LOGIN"
             />
@@ -78,7 +78,7 @@ const ForgetPassword = () => {
         </form>
 
         <br />
-        {/* <NavLink class="register mb-5" to="/register">
+        {/* <NavLink className="register mb-5" to="/register">
         <button>register</button>
       </NavLink> */}
         <br />

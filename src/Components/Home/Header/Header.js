@@ -16,37 +16,37 @@ const Header = () => {
         <Container>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Link class="foioterpj" to="/home">
-              <img class="rounded" src={img} alt="" width="40" />{" "}
+            <Link className="foioterpj" to="/home">
+              <img className="rounded" src={img} alt="" width="40" />{" "}
               <Navbar.Brand href="#home">
-                <span class="pj">Bike Managment</span>
+                <span className="pj">Bike Managment</span>
               </Navbar.Brand>
             </Link>
-            <Nav class="ms-auto ">
-              <Link class="nav-link active" to="/">
+            <Nav className="ms-auto ">
+              <Link className="nav-link active" to="/">
                 {" "}
                 Home{" "}
               </Link>
-              <Link class="nav-link active" to="/">
+              <Link className="nav-link active" to="/">
                 {" "}
                 Das2{" "}
               </Link>
-              {/* <Link class="nav-link active" to="/AllBike">
+              {/* <Link className="nav-link active" to="/AllBike">
                 {" "}
                 AllBike{" "}
               </Link> */}
-              {/* <Link class="nav-link active" to="/gallery">
+              {/* <Link className="nav-link active" to="/gallery">
                 {" "}
                 Gallery{" "}
               </Link> */}
 
               {user?.email ? (
                 <>
-                  <Link class="nav-link active" to="/">
+                  <Link className="nav-link active" to="/">
                     DashBoard
                   </Link>
                   <Button
-                    class="bg-danger"
+                    className="bg-danger"
                     onClick={leLogout}
                     variant="secondary"
                     size="sm"
@@ -56,7 +56,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <Link class="nav-link active" to="/login">
+                  <Link className="nav-link active" to="/login">
                     Login
                   </Link>
                 </>

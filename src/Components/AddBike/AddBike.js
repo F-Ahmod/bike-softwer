@@ -64,13 +64,13 @@ const AddBike = () => {
   return (
     <div
       style={{ width: "90%", background: "#FFFFFF" }}
-      class="rounded shadow-sm mt-5 mx-auto  p-3 "
+      className="rounded shadow-sm mt-5 mx-auto  p-3 "
     >
       {msg && <Alert variant="success">{msg}</Alert>}
       {/* <form onSubmit={handleSubmit(onSubmit)}> */}
         <input
           style={{ width: "80%" }}
-          class="input-field"
+          className="input-field"
           defaultValue={name}
           onChange={e => setName(e.target.value)}
           placeholder="Title"
@@ -102,7 +102,7 @@ const AddBike = () => {
             Loading...
           </Button>
         ) : (
-          <input class="mt-3 buttom" type="button" value="submit" onClick={onSubmit} />
+          <input className="mt-3 buttom" type="button" value="submit" onClick={onSubmit} />
         )}
       {/* </form> */}
 

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-//import Gallerys from './Gallerys';
+import React from 'react';
 import "./Gallery.css"
-//import { Spinner } from 'react-bootstrap';
 
 const Gallery = () => {
  // const [gallery, setGallery] = useState([]);
@@ -13,8 +11,8 @@ const Gallery = () => {
     // }, [])
   return (
     <div>
-      {/* <h4 class='mt-4'>Gallery</h4>
-      <div  class='containerrr ps-5 pe-5'>
+      {/* <h4 className='mt-4'>Gallery</h4>
+      <div  className='containerrr ps-5 pe-5'>
       {
                 gallery.map(gallery => <Gallerys
                     gallery={gallery}

@@ -16,32 +16,32 @@ const MakeAdmin = () => {
       .then((res) => res.json())
       .then((result) => setLoding(false));
     
-    console.log(data);
+    // console.log(data);
     setMsg("Staf Added succesfull");
     setTimeout(() => setMsg(""), 3000);
   };
   return (
     <div
       style={{ width: "90%", }}
-      class="rounded  mt-5 mx-auto"
+      className="rounded  mt-5 mx-auto"
     >
-      {loding && <h3 class="text-center mt-5">Loading...</h3>}
+      {loding && <h3 className="text-center mt-5">Loading...</h3>}
 
-      <form onSubmit={handleSubmit(onSubmit)} class=" ">
+      <form onSubmit={handleSubmit(onSubmit)} className=" ">
         <input
           style={{ width: "80%", background: "#fff"  }}
-          class="makeAdminBottom w-50 d-block p-2"
+          className="makeAdminBottom w-50 d-block p-2"
           name="email"
           placeholder="Email"
           type="email"
           {...register("email", { required: true })}
         />
         {msg && (
-          <div class="alert alert-success" role="alert">
+          <div className="alert alert-success" role="alert">
             {msg}
           </div>
         )}
-        <input class="bott mt-3" type="submit" value="Make a Staf" />
+        <input className="bott mt-3" type="submit" value="Make a Staf" />
       </form>
     </div>
   );

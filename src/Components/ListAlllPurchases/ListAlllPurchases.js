@@ -19,15 +19,15 @@ const ListAlllPurchases = () => {
   }, []);
   return (
     <div>
-      {loding && <h3 class="text-center mt-5">Loading...</h3>}
+      {loding && <h3 className="text-center mt-5">Loading...</h3>}
       
-      <div class="card shadow border-0 mb-7">
-        <div class="card-header">
-          <h5 class="mb-0">All Purchases</h5>
+      <div className="card shadow border-0 mb-7">
+        <div className="card-header">
+          <h5 className="mb-0">All Purchases</h5>
         </div>
-        <div class="table-responsive">
-          <table class="table table-hover ">
-          <thead class="thead-light">
+        <div className="table-responsive">
+          <table className="table table-hover ">
+          <thead className="thead-light">
                   <tr>
                     <th scope="col">Owner Name</th>
                     <th scope="col">Email</th>
@@ -46,6 +46,7 @@ const ListAlllPurchases = () => {
               {purchases?.map((purchase) => (
                 <SingleListPurchase purchase={purchase}></SingleListPurchase>
               ))}
+
             </tbody>
           </table>
         </div>

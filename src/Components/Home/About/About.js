@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import img2 from "../images/man-golf-field-flag_23-2148822983.jpg";
 import AOS from "aos";
 import "./About.css";
 
@@ -12,39 +11,39 @@ const About = () => {
     });
   }, []);
   return (
-    <div class="row  mt-3 mb-5">
-      {/* <div class="">
+    <div className="row  mt-3 mb-5">
+      {/* <div className="">
         <nav
           id="findmore"
-          class="navbar navbar-expand-lg navbar-light bg-light"
+          className="navbar navbar-expand-lg navbar-light bg-light"
         >
-          <div class="container-fluid">
+          <div className="container-fluid">
             <div
-              class="collapse navbar-collapse d-flex justify-content-center "
+              className="collapse navbar-collapse d-flex justify-content-center "
               id="navbarNa">
               
               <div>
-              <h5 class="text-light" data-aos="fade-up-left ">--Welcome--</h5>
+              <h5 className="text-light" data-aos="fade-up-left ">--Welcome--</h5>
               <br />
-              <h1 class="text-light" data-aos="fade-up-right  ">The Home Of PJ Club</h1>
+              <h1 className="text-light" data-aos="fade-up-right  ">The Home Of PJ Club</h1>
               </div>
             </div>
           </div>
         </nav>
       </div>
 
-      <div class="col-md-5 d-flex align-items-cente ">
-        <img src={img2} class="p-3 d-block w-100 rounded" alt="..." />
+      <div className="col-md-5 d-flex align-items-cente ">
+        <img src={img2} className="p-3 d-block w-100 rounded" alt="..." />
       </div>
 
-      <div class="col-md-7" data-aos="fade-right">
+      <div className="col-md-7" data-aos="fade-right">
         <p>About us</p>
-        <h1 class="text-success mx-auto fs-1" data-aos="fade-up-left">
+        <h1 className="text-success mx-auto fs-1" data-aos="fade-up-left">
           PJ Club is The Best for Glof and sweeming
         </h1>
         <br />
         <div data-aos="fade-in-left">
-          <p class="text-start">
+          <p className="text-start">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae,
             laudantium officia fuga delectus nulla hic nam. Libero eum est
             perferendis unde tempore quam architecto alias, placeat ad odit

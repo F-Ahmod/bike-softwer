@@ -18,28 +18,25 @@ const Login = () => {
 
   return (
     <div
-      class="d-flex justify-content-center align-items-center"
+      className="d-flex justify-content-center align-items-center"
       style={{ height: "100vh" }}
     >
-      <div class=" rounded   logingBackground" style={{ width: "350px" }}>
-        <p class="homeIccons">
+      <div className=" rounded   logingBackground" style={{ width: "350px" }}>
+        <p className="homeIccons">
           <a href="/">
-            <AiOutlineHome class="" />
+            <AiOutlineHome className="" />
           </a>
         </p>
         <br />
         <img
-          class="p-3"
+          className="p-3"
           style={{ width: "80%", height: "90px" }}
           src="https://i.ibb.co/VMVjmm6/logo-1.png"
           alt=""
         />
-        <form
-          class="p-3 logingBackground"
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form className="p-3 logingBackground" onSubmit={handleSubmit(onSubmit)}>
           <input
-            class="input-field "
+            className="input-field "
             name="email"
             placeholder="Email"
             type="email"
@@ -47,7 +44,7 @@ const Login = () => {
           />
           <br />
           <input
-            class="input-field"
+            className="input-field"
             name="password"
             type="password"
             placeholder="Password"
@@ -55,26 +52,24 @@ const Login = () => {
           />
           <br />
 
-          <select class="w-100" name="cars" id="cars">
+          <select className="w-100" name="cars" id="cars">
             <option value="volvo">Select User Type</option>
             <option value="saab">Admin</option>
             <option value="opel">Castomer</option>
             <option value="audi">Mashine</option>
           </select>
-          <input class="submit-button " type="submit" value="SING IN" />
+          <input className="submit-button " type="submit" value="SING IN" />
           <br />
         </form>
-        <div class="">
-          <NavLink class="" to="/forgetPassword">
-            <button class="Forget_Password">
+        <div className="">
+          <NavLink className="" to="/forgetPassword">
+            <button className="Forget_Password">
               <GrUserManager />
               Forget Password
             </button>
           </NavLink>
-          <NavLink class="" to="/register">
-            <button class="Forget_Password">
-              IF YOU DON'T HAVE ACCOUNT
-            </button>
+          <NavLink className="" to="/register">
+            <button className="Forget_Password">IF YOU DON'T HAVE ACCOUNT</button>
           </NavLink>
         </div>
         <br />
