@@ -7,7 +7,7 @@ import Accordion from "react-bootstrap/Accordion";
 import "./Deshbord.css";
 
 const Deshbord = () => {
-  const { leLogout, user, admin } = useFirebase();
+  const { leLogout, user } = useFirebase();
 
   return (
     <div>
@@ -29,12 +29,12 @@ const Deshbord = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
 
-            <a className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+            <Link className="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" to="/">
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh_k-PXFEOg0WLls_i5Fdmv_3xffkwSmi63F-zWlby&s"
                 alt="..."
               />
-            </a>
+            </Link>
 
             <div className="navbar-user d-lg-none">
               <div className="dropdown"></div>
@@ -68,7 +68,7 @@ const Deshbord = () => {
                       <i className="bi bi-bag"></i> List all purchases
                     </Link>
                     <Link className="nav-link" to="/newPurchacs">
-                      <i className="bi bi-people"></i> New Purchas
+                      <i className="bi bi-people"></i> New purchase
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -76,28 +76,27 @@ const Deshbord = () => {
                   <Accordion.Header>Bike Sale</Accordion.Header>
                   <Accordion.Body>
                     <Link className="nav-link" to="/BuyerDetails">
-                     Buyer details
+                      Buyer details
                     </Link>
                     <Link className="nav-link" to="/invoice">
-                     Invoice
+                      Invoice
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
               </Accordion>
-              
+
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link className="nav-link" to="/buyForm">
                     <i className="bi bi-people"></i> Bike Purchase
                   </Link>
                 </li>
-                {/* {admin && ( */}
+
                 <li className="nav-item">
                   <Link className="nav-link" to="/makeadmin">
                     <i className="bi bi-bar-chart"></i> Make Staf
                   </Link>
                 </li>
-                {/* )} */}
               </ul>
 
               <hr className="navbar-divider opacity-20" />

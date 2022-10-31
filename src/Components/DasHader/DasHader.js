@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import ListAlllPurchases from "../ListAlllPurchases/ListAlllPurchases";
 
 const DasHader = () => {
@@ -41,29 +40,29 @@ const DasHader = () => {
           <div className="mb-npx">
             <div className="row align-items-center">
               <div className="col-sm-6 col-12 mb-4 mb-sm-0">
-                <h1 className="h2 mb-0 ls-tight">Bike Showroom Management System.</h1>
+                <h1 className="h2 mb-0 ls-tight">Bike Showroom Management System</h1>
               </div>
 
               <div className="col-sm-6 col-12 text-sm-end"></div>
             </div>
 
-            <ul className="nav nav-tabs mt-4 overflow-x border-0">
+            {/* <ul className="nav nav-tabs mt-4 overflow-x border-0">
               <li className="nav-item ">
                 <Link className="nav-link" to="/buyForm">
-                  Purchas
+                purchase 
+                </Link>
+              </li> 
+               <li className="nav-item">
+                <Link to="/listAlllPurchases" className="nav-link font-regular">
+                  List Alll Purchase
                 </Link>
               </li>
-              <li className="nav-item">
-                <a href="/listAlllPurchases" className="nav-link font-regular">
-                  List Alll Purchases
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="/buyForm" className="nav-link font-regular">
+             <li className="nav-item">
+                <Link to="/buyForm" className="nav-link font-regular">
                   Purchas
-                </a>
-              </li>
-            </ul>
+                </Link>
+              </li> 
+            </ul> */}
           </div>
         </div>
       </header>
