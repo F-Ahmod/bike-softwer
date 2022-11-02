@@ -51,7 +51,7 @@ const Deshbord = () => {
 
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>Manage Vechecal</Accordion.Header>
+                  <Accordion.Header className="">Manage Vechecal</Accordion.Header>
                   <Accordion.Body>
                     <Link className="nav-link" to="/AllBike">
                       <i className="bi bi-people"></i> All Bike
@@ -72,7 +72,7 @@ const Deshbord = () => {
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="1">
+                <Accordion.Item eventKey="2">
                   <Accordion.Header>Bike Sale</Accordion.Header>
                   <Accordion.Body>
                     <Link className="nav-link" to="/BuyerDetails">

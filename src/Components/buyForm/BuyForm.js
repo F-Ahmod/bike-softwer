@@ -58,10 +58,10 @@ const BuyForm = () => {
       {message && <Alert variant="success">{message}</Alert>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
-          <h5>Owner Details</h5>
+          <h4>Owner Details</h4>
           <div className="col-6">
             <div>
-              <label className="d-block r">Owner name</label>
+              <label className="d-block mt-2">Owner name</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -72,7 +72,7 @@ const BuyForm = () => {
             </div>
 
             <div>
-              <label className="d-block">Mobile number</label>
+              <label className="d-block mt-2">Mobile number</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -86,7 +86,7 @@ const BuyForm = () => {
             </div>
 
             <div>
-              <label className="d-block">Addres</label>
+              <label className="d-block mt-2">Addres</label>
               <input
                 style={{ width: "100%" }}
                 type="text"
@@ -100,7 +100,7 @@ const BuyForm = () => {
           </div>
           <div className="col-6">
             <div>
-              <label className="d-block">Email</label>
+              <label className="d-block mt-2">Email</label>
 
               <input
                 style={{ width: "100%" }}
@@ -111,7 +111,7 @@ const BuyForm = () => {
             </div>
 
             <div>
-              <label className="d-block">National id number</label>
+              <label className="d-block mt-2">National id number</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -125,8 +125,8 @@ const BuyForm = () => {
         </div>
         <div className="row">
           <hr className="inputColor" />
-          <h5>Bike Details</h5>
-          <div className="col-6 mt-3">
+          <h4>Bike Details</h4>
+          <div className="col-6 mt-5">
             <div>
               <label className="d-block">Bike name</label>
               <select {...register("bikeName")} style={{ width: "100%" }}>
@@ -136,7 +136,7 @@ const BuyForm = () => {
               </select>
             </div>
             <div>
-              <label className="d-block">Bike Modle</label>
+              <label className="d-block  mt-3">Bike Modle</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -145,7 +145,7 @@ const BuyForm = () => {
               />
             </div>
             <div className="mb-2">
-              <label className="d-block">Bike image</label>
+              <label className="d-block  mt-3">Bike image</label>
               <input
                 type="file"
                 onChange={(event) => {
@@ -153,14 +153,14 @@ const BuyForm = () => {
                 }}
               />
               <button className="ms-2 rounded-1" onClick={uplodFile}>
-                uploded
+              Upload
               </button>
               {imageUrls.map((url) => {
                 return <img width="100px" height="100%" src={url} alt="" />;
               })}
             </div>
             <div>
-              <label className="d-block">Purchas Date</label>
+              <label className="d-block mt-3">Purchas Date</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -169,7 +169,7 @@ const BuyForm = () => {
               />
             </div>
             <div>
-              <label className="d-block">Selling Price</label>
+              <label className="d-block mt-3">Selling Price</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -207,7 +207,7 @@ const BuyForm = () => {
               </div>
             </div>
             <div>
-              <label className="d-block">Ragistration number</label>
+              <label className="d-block mt-2">Ragistration number</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -216,7 +216,7 @@ const BuyForm = () => {
               />
             </div>
             <div>
-              <label className="d-block">Previous Name </label>
+              <label className="d-block mt-3">Previous Name </label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -225,7 +225,7 @@ const BuyForm = () => {
               />
             </div>
             <div>
-              <label className="d-block">Purchased By</label>
+              <label className="d-block  mt-3">Purchased By</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -234,7 +234,7 @@ const BuyForm = () => {
               />
             </div>
             <div>
-              <label className="d-block">Buying price</label>
+              <label className="d-block mt-3">Buying price</label>
               <input
                 style={{ width: "100%" }}
                 className=""

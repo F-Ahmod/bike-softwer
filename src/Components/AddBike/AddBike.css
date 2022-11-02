@@ -1,0 +1,6 @@
+.buttom{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    background-image:linear-gradient(to right, rgb(163, 211, 163),rgb(103, 226, 103));
+    border-radius: 3px;
+  }
