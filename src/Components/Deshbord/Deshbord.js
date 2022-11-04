@@ -42,43 +42,49 @@ const Deshbord = () => {
 
             <div className="collapse navbar-collapse" id="sidebarCollapse">
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/dasHader">
-                    <i className="bi bi-people"></i> Home
+                <li className="nav-item mb-3">
+                  <Link className="nav-link " to="/dasHader">
+                    <i className="bi bi-people ms-2"></i> Home
                   </Link>
                 </li>
               </ul>
 
               <Accordion defaultActiveKey="0">
-                <Accordion.Item eventKey="0">
-                  <Accordion.Header className="">Manage Vechecal</Accordion.Header>
+                <Accordion.Item eventKey="0" className=" mb-3 ">
+                  <Accordion.Header className="">
+                    <i className="bi bi-people me-4 "></i>Manage Vechecal
+                  </Accordion.Header>
                   <Accordion.Body>
-                    <Link className="nav-link" to="/AllBike">
-                      <i className="bi bi-people"></i> All Bike
+                    <Link className="nnav-link mb-1" to="/AllBike">
+                      All Bike
                     </Link>
-                    <Link className="nav-link" to="/AddBike">
-                      <i className="bi bi-plus"></i> Add bike
+                    <Link className="nnav-link" to="/AddBike">
+                      Add bike
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                  <Accordion.Header>Purchase</Accordion.Header>
+                <Accordion.Item eventKey="1" className="mb-4">
+                  <Accordion.Header>
+                    <i className="bi bi-people me-4"></i> Purchase
+                  </Accordion.Header>
                   <Accordion.Body>
-                    <Link className="nav-link" to="/listAlllPurchases">
-                      <i className="bi bi-bag"></i> List all purchases
+                    <Link className="nnav-link" to="/listAlllPurchases">
+                      List all purchases
                     </Link>
-                    <Link className="nav-link" to="/newPurchacs">
-                      <i className="bi bi-people"></i> New purchase
+                    <Link className="nnav-link" to="/newPurchacs">
+                      New purchase
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
-                <Accordion.Item eventKey="2">
-                  <Accordion.Header>Bike Sale</Accordion.Header>
+                <Accordion.Item eventKey="2" className="mb-4">
+                  <Accordion.Header>
+                    <i className="bi bi-people me-4"></i> Bike Sale
+                  </Accordion.Header>
                   <Accordion.Body>
-                    <Link className="nav-link" to="/BuyerDetails">
+                    <Link className="nnav-link" to="/BuyerDetails">
                       Buyer details
                     </Link>
-                    <Link className="nav-link" to="/invoice">
+                    <Link className="nnav-link" to="/invoice">
                       Invoice
                     </Link>
                   </Accordion.Body>
@@ -86,15 +92,25 @@ const Deshbord = () => {
               </Accordion>
 
               <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/buyForm">
-                    <i className="bi bi-people"></i> Bike Purchase
+                <li className="nav-item mb-5">
+                  <Link className="nav-link  " to="/buyForm">
+                    <i className="bi bi-people ms-2"></i> Bike Purchase
                   </Link>
                 </li>
 
-                <li className="nav-item">
+                <li className="nav-item mb-3">
                   <Link className="nav-link" to="/makeadmin">
-                    <i className="bi bi-bar-chart"></i> Make Staf
+                    <i className="bi bi-bar-chart ms-2"></i> Make Staf
+                  </Link>
+                </li>
+                <li className="nav-item mb-3">
+                  <Link className="nav-link" to="/dataInput">
+                    <i className="bi bi-bar-chart ms-2"></i> DataInput
+                  </Link>
+                </li>
+                <li className="nav-item mb-3">
+                  <Link className="nav-link" to="/dataInputUI">
+                    <i className="bi bi-bar-chart ms-2"></i> DataInputUI
                   </Link>
                 </li>
               </ul>
@@ -123,9 +139,7 @@ const Deshbord = () => {
             </div>
           </div>
         </nav>
-
-        <div className="h-screen flex-grow-1 overflow-y-lg-auto">
-          {/* <DasHader/> */}
+        <div className="h-screen flex-grow-1 overflow-y-lg-auto">        
           <Outlet />
         </div>
       </div>

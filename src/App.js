@@ -20,6 +20,8 @@ import AddBike from "./Components/AddBike/AddBike";
 import NewPurchacs from "./Components/NewPurchacs/NewPurchacs";
 import BuyerDetails from "./Firebase/BuyerDetails/BuyerDetails";
 import Invoice from "./Components/Invoice/Invoice";
+import DataInput from "./Components/DataInput/DataInput";
+import DataInputUI from "./Components/DataInputUI/DataInputUI";
 
 
 function App() {
@@ -52,6 +54,9 @@ function App() {
           <Route path="/singleListPurchase" element={<SingleListPurchase/>} /> 
           <Route path="AllBike" element={<AllBike />} />
           <Route path="AddBike" element={<AddBike />} />
+          <Route path="dataInput" element={<DataInput />} />
+          <Route path="dataInputUI" element={<DataInputUI />} />
+
           {/* <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} /> */}
           <Route path="makeadmin" element={<MakeAdmin />} />
         </Route>

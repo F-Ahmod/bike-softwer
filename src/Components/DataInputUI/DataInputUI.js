@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import SingleListPurchase from "../SingleListPurchase/SingleListPurchase";
+import SingleDataInputUI from "../SingleDataInputUI/SingleDataInputUI";
 
-const ListAlllPurchases = () => {
-  const [purchases, setPurchases] = useState([]);
+const DataInputUI = () => {
+  const [dataInputUi, setDataInputUi] = useState([]);
   const [loding, setLoding] = useState(false);
-
   useEffect(() => {
     setLoding(true);
-    fetch("https://bike-soft.herokuapp.com/purchase")
+    fetch("http://localhost:5000/dataInput")
       .then((data) => data.json())
       .then((res) => {
         console.log(res);
-        setPurchases(res);
+        setDataInputUi(res);
         setLoding(false);
       });
   }, []);
+
   return (
     <div>
       {loding && <h3 className="text-center mt-5">Loading...</h3>}
@@ -41,8 +41,8 @@ const ListAlllPurchases = () => {
               </tr>
             </thead>
             <tbody>
-              {purchases?.map((purchase) => (
-                <SingleListPurchase purchase={purchase}></SingleListPurchase>
+              {dataInputUi?.map((dataInputUi) => (
+                <SingleDataInputUI dataInputUi={dataInputUi} key={dataInputUi._id}></SingleDataInputUI>
               ))}
             </tbody>
           </table>
@@ -52,4 +52,4 @@ const ListAlllPurchases = () => {
   );
 };
 
-export default ListAlllPurchases;
+export default DataInputUI;
