@@ -6,10 +6,9 @@ const DataInputUI = () => {
   const [loding, setLoding] = useState(false);
   useEffect(() => {
     setLoding(true);
-    fetch("http://localhost:5000/dataInput")
+    fetch("https://bike-soft.herokuapp.com/dataInput")
       .then((data) => data.json())
       .then((res) => {
-        console.log(res);
         setDataInputUi(res);
         setLoding(false);
       });
@@ -27,16 +26,26 @@ const DataInputUI = () => {
           <table className="table table-hover ">
             <thead className="thead-light">
               <tr>
-                <th scope="col">Owner Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Id</th>
-                <th scope="col">Address</th>
-                <th scope="col">National Id Number</th>
+                <th scope="col">Serial</th>
+                <th scope="col">Asset</th>
+                <th scope="col">RC</th>
+                <th scope="col">Year</th>
                 <th scope="col">Registration Number</th>
-                <th scope="col">Company Name</th>
-                <th scope="col">Date</th>
-                <th scope="col">Rc</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Yard Rent</th>
+                <th scope="col">Expencea Docu</th>
+                <th scope="col">Transport</th>
+                <th scope="col">Petrol</th>
+                <th scope="col">Spare Parts</th>
+                <th scope="col">Patch/Paint</th>
+                <th scope="col">Insur</th>
+                <th scope="col">Tyre</th>
+                <th scope="col">SER</th>
+                <th scope="col">OTER</th>
+                <th scope="col">Total exp</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Price Sold</th>
+                <th scope="col">Profit</th>
                 <th></th>
               </tr>
             </thead>

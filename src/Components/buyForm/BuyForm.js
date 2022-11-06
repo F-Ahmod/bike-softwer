@@ -173,7 +173,7 @@ const BuyForm = () => {
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
+                type="number"
                 {...register("SellingPrice", { required: true })}
               />
             </div>
@@ -238,7 +238,7 @@ const BuyForm = () => {
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
+                type="number"
                 {...register("BuyingPrice", { required: true })}
               />
             </div>
@@ -295,7 +295,7 @@ const BuyForm = () => {
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
+                type="number"
                 {...register("amount", { required: true })}
               />
             </div>
@@ -306,7 +306,7 @@ const BuyForm = () => {
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
+                type="number"
                 {...register("amount", { required: true })}
               />
             </div>

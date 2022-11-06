@@ -5,14 +5,14 @@ import { useForm } from "react-hook-form";
 
 const DataInput = () => {
   const [isLoading, setIsLoading] = useState(false);
-//   const [bikes, setBikes] = useState([]);
+  //   const [bikes, setBikes] = useState([]);
   const [message, setMessage] = useState("");
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.post("http://localhost:5000/dataInput ", data);
+    await axios.post("https://bike-soft.herokuapp.com/dataInput ", data);
     setMessage("data Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);
@@ -25,66 +25,129 @@ const DataInput = () => {
         <div className="row"></div>
         <div className="row">
           <hr className="inputColor" />
+          <div className="col-6 ">
+            {/* right site  */}
 
-          <div className="col-6 mt-5">
-            
             <div>
-              <label className="d-block  mt-3">Bike Modle</label>
+              <label className="d-block  mt-3">Serial</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("serial", { required: true })}
+              />
+            </div>
+            <div>
+              <label className="d-block  mt-3">Asset</label>
               <input
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("modle", { required: true })}
+                {...register("name", { required: true })}
               />
             </div>
 
             <div>
-              <label className="d-block mt-3">Purchas Date</label>
+              <label className="d-block mt-3">Year</label>
               <input
                 style={{ width: "100%" }}
-                className=""
-                type="date"
-                {...register("date", { required: true })}
+                type="number"
+                min="1900"
+                max="2099"
+                {...register("year", { required: true })}
               />
             </div>
+
             <div>
-              <label className="d-block mt-3">Selling Price</label>
+              <label className="d-block mt-3">Transport</label>
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
-                {...register("SellingPrice", { required: true })}
+                type="number"
+                {...register("transportMils", { required: true })}
               />
             </div>
-          </div>
-          <div className="col-6">
-            <div className="">
+
+            <div>
+              <label className="d-block mt-3">Petrol</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("petrol", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Spare parts</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("spareParts", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Patch/Paint</label>
+              <input
+                style={{ width: "100%" }}
+                type="text"
+                {...register("patchPaint", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Cost</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("cost", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Price Sold</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("priceSold", { required: true })}
+              />
+            </div>
+
+            <div className="mt-3">
               <label className="d-block">RC</label>
-
               <div className="d-flex align-items-center">
                 <input
                   type="radio"
-                  {...register("rc")}
                   id="yes"
                   name="fav_language"
                   value="Yes"
+                  {...register("rc")}
                 />
                 <label for="yes" className="ms-2">
                   Yes
                 </label>
                 <br /> {" "}
                 <input
-                  {...register("rc")}
                   className="ms-2"
                   type="radio"
                   id="no"
                   name="fav_language"
                   value="No"
+                  {...register("rc")}
                 />
                   <label for="no">No</label>
                 <br />
               </div>
             </div>
+          </div>
+
+          {/* left site */}
+
+          <div className="col-6">
             <div>
               <label className="d-block mt-2">Ragistration number</label>
               <input
@@ -94,31 +157,94 @@ const DataInput = () => {
                 {...register("RagistrationNumber", { required: true })}
               />
             </div>
-            <div>
-              <label className="d-block mt-3">Previous Name </label>
+
+            <div className="">
+              <label className="d-block mt-3">Amount</label>
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
-                {...register("PreviousOwnerName", { required: true })}
+                type="number"
+                {...register("amount", { required: true })}
               />
             </div>
-            <div>
-              <label className="d-block  mt-3">Purchased By</label>
+
+            <div className="">
+              <label className="d-block mt-3">Expencea Docu</label>
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
-                {...register("purchasedBy", { required: true })}
+                type="number"
+                {...register("expenceDocu", { required: true })}
               />
             </div>
-            <div>
-              <label className="d-block mt-3">Buying price</label>
+
+            <div className="">
+              <label className="d-block mt-3">Yard rent</label>
               <input
                 style={{ width: "100%" }}
                 className=""
-                type="text"
-                {...register("BuyingPrice", { required: true })}
+                type="number"
+                {...register("yardRent", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Insur</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("insur", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Tyre</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("tyre", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">SER</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("ser", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">OTER</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("oter", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Total exp</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("totalExp", { required: true })}
+              />
+            </div>
+
+            <div>
+              <label className="d-block mt-3">Profit</label>
+              <input
+                style={{ width: "100%" }}
+                className=""
+                type="number"
+                {...register("profit", { required: true })}
               />
             </div>
           </div>
