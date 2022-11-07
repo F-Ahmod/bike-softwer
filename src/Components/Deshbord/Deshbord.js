@@ -52,7 +52,7 @@ const Deshbord = () => {
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0" className=" mb-3 ">
                   <Accordion.Header className="">
-                    <i className="bi bi-people me-4 "></i>Manage Vechecal
+                    <i className="bi bi-people me-4 "></i>Manage Vehicle
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link mb-1" to="/AllBike">

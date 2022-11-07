@@ -2,7 +2,9 @@ import React from "react";
 
 const SingleDataInputUI = ({ dataInputUi }) => {
   const {
-    serial,name,year,RagistrationNumber,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insur,tyre,ser,oter,totalExp,profit} = dataInputUi;
+    serial,name,year,RagistrationNumber,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insur,tyre,ser,oter,totalExp} = dataInputUi;
+
+    const profiet = parseInt(amount) - parseInt(yardRent) - parseInt(expenceDocu) - parseInt(transportMils) - parseInt(petrol) - parseInt(spareParts) -  parseInt(patchPaint) - parseInt(insur) - parseInt(tyre) - parseInt(ser) - parseInt(oter) - parseInt(totalExp) - parseInt(cost)
   return (
       <tr>
         <td>
@@ -63,7 +65,7 @@ const SingleDataInputUI = ({ dataInputUi }) => {
           <p className="text-heading font-semibold">{priceSold}</p>
         </td>
         <td>
-          <p className="text-heading font-semibold">{profit}</p>
+          <p className="text-heading font-semibold">{profiet}</p>
         </td>
       </tr>
   );

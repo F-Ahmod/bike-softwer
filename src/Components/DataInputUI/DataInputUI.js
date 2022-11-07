@@ -19,9 +19,9 @@ const DataInputUI = () => {
       {loding && <h3 className="text-center mt-5">Loading...</h3>}
 
       <div className="card shadow border-0 mb-7">
-        <div className="card-header">
+        {/* <div className="card-header">
           <h5 className="mb-0">All Purchases</h5>
-        </div>
+        </div> */}
         <div className="table-responsive">
           <table className="table table-hover ">
             <thead className="thead-light">

@@ -238,15 +238,6 @@ const DataInput = () => {
               />
             </div>
 
-            <div>
-              <label className="d-block mt-3">Profit</label>
-              <input
-                style={{ width: "100%" }}
-                className=""
-                type="number"
-                {...register("profit", { required: true })}
-              />
-            </div>
           </div>
         </div>
 
