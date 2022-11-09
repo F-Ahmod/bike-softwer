@@ -2,25 +2,19 @@ import React from "react";
 
 const SingleDataInputUI = ({ dataInputUi }) => {
   const {
-    serial,name,year,RagistrationNumber,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insur,tyre,ser,oter,totalExp} = dataInputUi;
+    serial,asset,year,ragistrationNumber,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insurance,tyre,ser,other,totalExp} = dataInputUi;
 
-    const profiet = parseInt(amount) - parseInt(yardRent) - parseInt(expenceDocu) - parseInt(transportMils) - parseInt(petrol) - parseInt(spareParts) -  parseInt(patchPaint) - parseInt(insur) - parseInt(tyre) - parseInt(ser) - parseInt(oter) - parseInt(totalExp) - parseInt(cost)
+    const profiet = parseInt(amount)- parseInt(yardRent) - parseInt(expenceDocu) - parseInt(transportMils) - parseInt(petrol) - parseInt(spareParts) -  parseInt(patchPaint) - parseInt(insurance) - parseInt(tyre) - parseInt(ser) - parseInt(other) - parseInt(totalExp) - parseInt(cost)
   return (
       <tr>
         <td>
           <p className="text-heading font-semibold"> {serial}</p>
         </td>
         <td>
-          <p className="text-heading font-semibold">{name}</p>
+          <p className="text-heading font-semibold">{asset}</p>
         </td>
         <td>
           <p className="text-heading font-semibold">{rc}</p>
-        </td>
-        <td>
-          <p className="text-heading font-semibold">{year}</p>
-        </td>
-        <td>
-          <p className="text-heading font-semibold">{RagistrationNumber}</p>
         </td>
         <td>
           <p className="text-heading font-semibold">{amount}</p>
@@ -34,17 +28,21 @@ const SingleDataInputUI = ({ dataInputUi }) => {
         <td>
           <p className="text-heading font-semibold">{transportMils}</p>
         </td>
+       
         <td>
           <p className="text-heading font-semibold">{petrol}</p>
         </td>
+
         <td>
           <p className="text-heading font-semibold">{spareParts}</p>
         </td>
+
         <td>
           <p className="text-heading font-semibold">{patchPaint}</p>
         </td>
+        
         <td>
-          <p className="text-heading font-semibold">{insur}</p>
+          <p className="text-heading font-semibold">{insurance}</p>
         </td>
         <td>
           <p className="text-heading font-semibold">{tyre}</p>
@@ -53,7 +51,7 @@ const SingleDataInputUI = ({ dataInputUi }) => {
           <p className="text-heading font-semibold">{ser}</p>
         </td>
         <td>
-          <p className="text-heading font-semibold">{oter}</p>
+          <p className="text-heading font-semibold">{other}</p>
         </td>
         <td>
           <p className="text-heading font-semibold">{totalExp}</p>

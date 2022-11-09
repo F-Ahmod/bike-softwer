@@ -6,13 +6,16 @@ import axios from "axios";
 import Spinner from "react-bootstrap/Spinner";
 
 const Plans = ({ plan, reamingData, loadData }) => {
-  const { title, imageUrls } = plan;
+  const { title,_id, imageUrls } = plan;
   const [updatedName, setUpdatedName] = useState(title || "");
+ // const [updatedImage, setUpdatedImage] = useState(imageUrls || "");
   const [show, setShow] = useState(false);
+  //const [showw, setShoww] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+ // const handleShoww = () => setShoww(true);
 
   const updateName = async () => {
     setLoading(true);
@@ -24,6 +27,17 @@ const Plans = ({ plan, reamingData, loadData }) => {
     setLoading(false);
     handleClose();
   };
+
+  // const updateImage = async () => {
+  //   setLoading(true);
+  //   await axios.put(
+  //     `https://bike-soft.herokuapp.com/updateImage?id=${plan._id}`,
+  //     { imageUrls: updatedImage }
+  //   );
+  //   loadData();
+  //   setLoading(false);
+  //   handleClose();
+  // };
 
   const handelDelete = (id) => {
     Swal.fire({
@@ -65,12 +79,18 @@ const Plans = ({ plan, reamingData, loadData }) => {
           <p className="text-heading font-semibold">{title}</p>
         </td>
         <td>
-          {imageUrls?.map((url) => {
-            return <img width="100px" height="100%" src={url} alt="" />;
-          })}
+          <p className="text-heading font-semibold">{_id.slice(3, 7)}</p>
+        </td>
+        <td>
+        
+          {/* {imageUrls?.map((url) => { */}
+             <img width="100px" height="100%" src={imageUrls[0]} alt="" />;
+          {/* })} */}
         </td>
 
         <td className="text-end">
+          
+
           <button
             onClick={handleShow}
             type="button"
@@ -78,6 +98,13 @@ const Plans = ({ plan, reamingData, loadData }) => {
           >
             <i className="bi bi-pen text-light"></i>
           </button>
+          {/* <button
+            onClick={handleShoww}
+            type="button"
+            className="btn btn-sm me-2 btn-square btn-neutral text-danger-hover bg-success"
+          >
+            <i className="bi bi-pen text-light"></i>
+          </button> */}
 
           <button
             onClick={() => handelDelete(plan._id)}
@@ -122,6 +149,40 @@ const Plans = ({ plan, reamingData, loadData }) => {
           )}
         </Modal.Footer>
       </Modal>
+{/* 
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input
+            defaultValue={updatedName}
+            onChange={(e) => updateImage(e.target.value)}
+            classNameName="w-100 d-block"
+          />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          {loading ? (
+            <Button variant="primary" disabled>
+              <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                aria-hidden="true"
+              />
+              Loading...
+            </Button>
+          ) : (
+            <Button variant="primary" onClick={updateImage}>
+              Save
+            </Button>
+          )}
+        </Modal.Footer>
+      </Modal> */}
     </>
   );
 };

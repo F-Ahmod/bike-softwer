@@ -38,6 +38,9 @@ const AllBike = () => {
                   Name
                 </th>
                 <th className="ps-5" scope="col">
+                  Invoice ID
+                </th>
+                <th className="ps-5" scope="col">
                   image
                 </th>
 

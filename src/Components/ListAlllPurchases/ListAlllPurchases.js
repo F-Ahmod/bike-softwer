@@ -34,10 +34,12 @@ const ListAlllPurchases = () => {
                 <th scope="col">Address</th>
                 <th scope="col">National Id Number</th>
                 <th scope="col">Registration Number</th>
-                <th scope="col">Company Name</th>
+                {/* <th scope="col">Company Name</th> */}
                 <th scope="col">Date</th>
+                <th scope="col">Purchase Expenses</th>
+                <th scope="col">Selling expenses</th>
                 <th scope="col">Rc</th>
-                <th></th>
+                <th>ACTION</th>
               </tr>
             </thead>
             <tbody>

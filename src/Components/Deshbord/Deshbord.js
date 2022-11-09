@@ -52,11 +52,11 @@ const Deshbord = () => {
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0" className=" mb-3 ">
                   <Accordion.Header className="">
-                    <i className="bi bi-people me-4 "></i>Manage Vehicle
+                    <i className="bi bi-people me-4 "></i>Manage vehicle
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link mb-1" to="/AllBike">
-                      All Bike
+                      All bike
                     </Link>
                     <Link className="nnav-link" to="/AddBike">
                       Add bike
@@ -72,20 +72,38 @@ const Deshbord = () => {
                       List all purchases
                     </Link>
                     <Link className="nnav-link" to="/newPurchacs">
-                      New purchase
+                      Today purchase
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
+
+
                 <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                    <i className="bi bi-people me-4"></i> Bike Sale
+                    <i className="bi bi-people me-4"></i> Bike sale
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/BuyerDetails">
                       Buyer details
                     </Link>
-                    <Link className="nnav-link" to="/invoice">
+                    {/* <Link className="nnav-link" to="/invoice">
                       Invoice
+                    </Link> */}
+                  </Accordion.Body>
+                </Accordion.Item>
+
+
+
+                <Accordion.Item eventKey="2" className="mb-4">
+                  <Accordion.Header>
+                    <i className="bi bi-people me-4"></i> Bike Expences
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <Link className="nnav-link" to="/dataInput">
+                    Data Input
+                    </Link>
+                    <Link className="nnav-link" to="/dataInputUI">
+                    Data Input UI
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -94,16 +112,16 @@ const Deshbord = () => {
               <ul className="navbar-nav">
                 <li className="nav-item mb-5">
                   <Link className="nav-link  " to="/buyForm">
-                    <i className="bi bi-people ms-2"></i> Bike Purchase
+                    <i className="bi bi-people ms-2"></i> Bike purchase
                   </Link>
                 </li>
 
                 <li className="nav-item mb-3">
                   <Link className="nav-link" to="/makeadmin">
-                    <i className="bi bi-bar-chart ms-2"></i> Make Staf
+                    <i className="bi bi-bar-chart ms-2"></i> Make staf
                   </Link>
                 </li>
-                <li className="nav-item mb-3">
+                {/* <li className="nav-item mb-3">
                   <Link className="nav-link" to="/dataInput">
                     <i className="bi bi-bar-chart ms-2"></i> DataInput
                   </Link>
@@ -112,7 +130,7 @@ const Deshbord = () => {
                   <Link className="nav-link" to="/dataInputUI">
                     <i className="bi bi-bar-chart ms-2"></i> DataInputUI
                   </Link>
-                </li>
+                </li> */}
               </ul>
 
               <hr className="navbar-divider opacity-20" />

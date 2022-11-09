@@ -22,6 +22,9 @@ import BuyerDetails from "./Firebase/BuyerDetails/BuyerDetails";
 import Invoice from "./Components/Invoice/Invoice";
 import DataInput from "./Components/DataInput/DataInput";
 import DataInputUI from "./Components/DataInputUI/DataInputUI";
+import UpDateBike from "./Components/UpDateBike/UpDateBike";
+import GrapChat from "./Components/GrapChat/GrapChat";
+import UpdateForm from "./Components/UpdateForm/UpdateForm";
 
 
 function App() {
@@ -48,7 +51,10 @@ function App() {
           <Route path="dasHader" element={<DasHader />} />
           <Route path="/buyForm" element={<BuyForm />} />
           <Route path="/BuyerDetails" element={<BuyerDetails />} />
-          <Route path="/invoice" element={<Invoice />} />
+          <Route path="/invoice/:_id" element={<Invoice />} />
+          <Route path="/upDateBike/:_id" element={<UpDateBike />} />
+          <Route path="/updateForm/:_id" element={<UpdateForm />} />
+          <Route path="/grapChat" element={<GrapChat />} />
           <Route path="/listAlllPurchases" element={<ListAlllPurchases/>} />  
           <Route path="/newPurchacs" element={<NewPurchacs/>} />  
           <Route path="/singleListPurchase" element={<SingleListPurchase/>} /> 

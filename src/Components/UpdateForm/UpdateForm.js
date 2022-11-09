@@ -1,19 +1,29 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Button, Spinner } from "react-bootstrap";
 import Alert from "react-bootstrap/Alert";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../Firebase/useFirebase";
-import "./BuyForm.css";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-const BuyForm = ({updatedBike}) => {
+import { useParams } from "react-router";
+import "./UpdateForm.css"
+const UpdateForm = () => {
+  const { _id } = useParams();
   const { storage } = useFirebase();
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [bikes, setBikes] = useState([]);
   const [message, setMessage] = useState("");
+
+  const [details, setDetails] = useState([]);
+  fetch(`https://bike-soft.herokuapp.com/purchase`)
+    .then((res) => res.json())
+    .then((data) => setDetails(data));
+  const mach = details?.find((a) => a?._id === _id);
+
+  console.log(mach);
 
   useEffect(() => {
     fetch("https://bike-soft.herokuapp.com/addBikes")
@@ -31,7 +41,7 @@ const BuyForm = ({updatedBike}) => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.post("https://bike-soft.herokuapp.com/purchase ", data);
+    await axios.put("http://localhost:5000/updaateForm", { ...data, _id });
     setMessage("Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);
@@ -52,49 +62,68 @@ const BuyForm = ({updatedBike}) => {
       });
     });
   };
-
+  
   return (
     <div className=" mt-5 p-5 p-1" style={{ backgroundColor: "#FFFFFF" }}>
+      
+     
+      
+      <div className="row mb-5 details ">
+      <div className="col-md-6">
+      <h5>Owner Details</h5>
+       <p>Owner Name {mach?.ownerName}</p>
+       <p>Email {mach?.email}</p>
+       <p>Mobile Number {mach?.mobileNumber}</p>
+       <p>Address {mach?.addres}</p>
+       <p>National Id Number {mach?.nationalIdNumber}</p>
+      </div>
+      <div className="col-md-6">
+        <h5>Bike Details</h5>
+        <p>Ragistration Number{mach?.ragistrationNumber}</p>
+        <p>Bike Name {mach?.bikeName}</p>
+        <p>Year {mach?.year}</p>
+        <p>Model {mach?.model}</p>
+        <p>Purchas Date {mach?.date}</p>
+
+      </div>
+      </div>
+
       {message && <Alert variant="success">{message}</Alert>}
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
-          <h4>Owner Details</h4>
+          <h4>Update Owner Details</h4>
           <div className="col-6">
             <div>
               <label className="d-block mt-2">Owner name</label>
               <input
-                defaultValue={updatedBike?.ownerName}
+                defaultValue={mach?.ownerName}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("ownerName", { required: true })}
+                {...register("ownerName")}
               />
             </div>
 
             <div>
               <label className="d-block mt-2">Mobile number</label>
               <input
-               defaultValue={updatedBike?.mobileNumber}
+                defaultValue={mach?.mobileNumber}
                 style={{ width: "100%" }}
                 className=""
                 type="tel"
-                {...register("mobileNumber", {
-                  required: true,
-                })}
+                {...register("mobileNumber")}
               />
-              {errors.exampleRequired && <span>This field is required</span>}
+              {/* {errors.exampleRequired && <span>This field is required</span>} */}
             </div>
 
             <div>
               <label className="d-block mt-2">Addres</label>
               <input
-               defaultValue={updatedBike?.addres}
+                defaultValue={mach?.addres}
                 style={{ width: "100%" }}
                 type="text"
                 className=""
-                {...register("addres", {
-                  required: true,
-                })}
+                {...register("addres")}
               />
             </div>
             <hr />
@@ -104,32 +133,29 @@ const BuyForm = ({updatedBike}) => {
               <label className="d-block mt-2">Email</label>
 
               <input
-               
-               defaultValue={updatedBike?.email}
+                defaultValue={mach?.email}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("email", { required: true })}
+                {...register("email")}
               />
             </div>
 
             <div>
               <label className="d-block mt-2">National id number</label>
               <input
-                defaultValue={updatedBike?.nationalIdNumber}
+                defaultValue={mach?.nationalIdNumber}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("nationalIdNumber", {
-                  required: true,
-                })}
+                {...register("nationalIdNumber")}
               />
             </div>
           </div>
         </div>
         <div className="row">
           <hr className="inputColor" />
-          <h4>Bike Details</h4>
+          <h4>Update Bike Details</h4>
           <div className="col-6 mt-5">
             <div>
               <label className="d-block">Bike name</label>
@@ -142,18 +168,16 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block  mt-3">Bike Modle</label>
               <input
-               defaultValue={updatedBike?.modle}
+                defaultValue={mach?.modle}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("modle", { required: true })}
+                {...register("modle")}
               />
             </div>
-            {/* uplode bike imagee */}
             {/* <div className="mb-2">
               <label className="d-block  mt-3">Bike image</label>
               <input
-              
                 type="file"
                 onChange={(event) => {
                   setImageUpload(event.target.files[0]);
@@ -169,33 +193,31 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block mt-3">Purchas Date</label>
               <input
-               defaultValue={updatedBike?.date}
+                defaultValue={mach?.date}
                 style={{ width: "100%" }}
                 className=""
                 type="date"
-                {...register("date", { required: true })}
+                {...register("date")}
               />
             </div>
             <div>
               <label className="d-block mt-3">Selling Price</label>
               <input
-                defaultValue={updatedBike?.sellingPrice}
+                defaultValue={mach?.sellingPrice}
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("sellingPrice", { required: true })}
+                {...register("sellingPrice")}
               />
             </div>
-          </div>
-          <div className="col-6">
-            {/* <div className="">
+            <div className="">
               <label className="d-block">RC</label>
 
               <div className="d-flex align-items-center">
                 <input
-                defaultValue={updatedBike?.rc}
+                  defaultValue={mach?.rc}
                   type="radio"
-                  {...register("rcYes")}
+                  {...register("rc")}
                   id="yes"
                   name="fav_language"
                   value="Yes"
@@ -205,82 +227,59 @@ const BuyForm = ({updatedBike}) => {
                 </label>
                 <br /> {" "}
                 <input
-                defaultValue={updatedBike?.rc}
-                  {...register("rcNo")}
+                  defaultValue={mach?.rc}
+                  {...register("rc")}
                   className="ms-2"
                   type="radio"
                   id="no"
                   name="fav_language"
                   value="No"
-                />
-                  <label for="no">No</label>
-                <br />
-              </div>
-            </div> */}
-            <div className="mt-3">
-              <label className="d-block">RC</label>
-              <div className="d-flex align-items-center">
-                <input
-                  type="radio"
-                  id="yes"
-                  name="fav_language"
-                  value="Yes"
-                  {...register("rc")}
-                />
-                <label for="yes" className="ms-2">
-                  Yes
-                </label>
-                <br /> {" "}
-                <input
-                  className="ms-2"
-                  type="radio"
-                  id="no"
-                  name="fav_language"
-                  value="No"
-                  {...register("rc")}
                 />
                   <label for="no">No</label>
                 <br />
               </div>
             </div>
+          </div>
+          <div className="col-6">
+           
             <div>
               <label className="d-block mt-2">Ragistration number</label>
               <input
-                defaultValue={updatedBike?.ragistrationNumber}
+                defaultValue={mach?.ragistrationNumber}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("ragistrationNumber", { required: true })}
+                {...register("ragistrationNumber")}
               />
             </div>
             <div>
               <label className="d-block mt-3">Previous Name </label>
               <input
-                defaultValue={updatedBike?.previousOwnerName}
+                defaultValue={mach?.previousOwnerName}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("previousOwnerName", { required: true })}
+                {...register("previousOwnerName")}
               />
             </div>
             <div>
               <label className="d-block  mt-3">Purchased By</label>
               <input
-                defaultValue={updatedBike?.purchasedBy}
+                defaultValue={mach?.purchasedBy}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("purchasedBy", { required: true })}
+                {...register("purchasedBy")}
               />
             </div>
             <div>
               <label className="d-block mt-3">Buying price</label>
               <input
-                defaultValue={updatedBike?.buyingPrice}
+                defaultValue={mach?.buyingPrice}
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("buyingPrice", { required: true })}
+                {...register("buyingPrice")}
               />
             </div>
           </div>
@@ -291,7 +290,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <h4>Purchase Expenses</h4>
               <select
-              defaultValue={updatedBike?.purchasedExpenses}
+                defaultValue={mach?.purchasedExpenses}
                 className="inputColor rounded mt-5"
                 {...register("purchasedExpenses")}
                 style={{ width: "100%" }}
@@ -316,7 +315,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <h4 className="">Selling expenses</h4>
               <select
-                defaultValue={updatedBike?.sellingExpenses}
+                defaultValue={mach?.sellingExpenses}
                 className="inputColor rounded mt-5"
                 {...register("sellingExpenses")}
                 style={{ width: "100%" }}
@@ -336,11 +335,11 @@ const BuyForm = ({updatedBike}) => {
             <div className="">
               <label className="d-block ">Amount</label>
               <input
-                defaultValue={updatedBike?.amount}
+                defaultValue={mach?.amount}
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("amount1", { required: true })}
+                {...register("amount1")}
               />
             </div>
           </div>
@@ -348,11 +347,11 @@ const BuyForm = ({updatedBike}) => {
             <div className="">
               <label className="d-block ">Amount</label>
               <input
-                defaultValue={updatedBike?.amount}
+                defaultValue={mach?.amount}
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("amount2", { required: true })}
+                {...register("amount2")}
               />
             </div>
           </div>
@@ -378,4 +377,4 @@ const BuyForm = ({updatedBike}) => {
   );
 };
 
-export default BuyForm;
+export default UpdateForm;

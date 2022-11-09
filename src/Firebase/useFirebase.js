@@ -8,15 +8,13 @@ import {
   signOut,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
- 
 } from "firebase/auth";
 // import firebase from 'firebase';
 import { useEffect, useState } from "react";
 
+const app = intializeFirebase();
 
-const app= intializeFirebase();
-
- const storage = getStorage(app);
+const storage = getStorage(app);
 const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
@@ -70,11 +68,10 @@ const useFirebase = () => {
         //   .then((data) => setAdmin(data?.role));
       }
       fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user.email}`)
-    .then(data=>data.json())
-    .then(res=>{
-      setAdmin(res)
-    
-    })
+        .then((data) => data.json())
+        .then((res) => {
+          setAdmin(res);
+        });
     });
   }, [auth]);
 
@@ -84,7 +81,7 @@ const useFirebase = () => {
         setUser({});
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       })
       .finally(() => setLoading(false));
   };
@@ -127,7 +124,7 @@ const useFirebase = () => {
     loginUser,
     authError,
     loading,
-    storage
+    storage,
   };
 };
 

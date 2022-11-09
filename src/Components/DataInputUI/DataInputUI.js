@@ -29,24 +29,22 @@ const DataInputUI = () => {
                 <th scope="col">Serial</th>
                 <th scope="col">Asset</th>
                 <th scope="col">RC</th>
-                <th scope="col">Year</th>
-                <th scope="col">Registration Number</th>
-                <th scope="col">Amount</th>
+                <th scope="col">Amount</th> 
                 <th scope="col">Yard Rent</th>
-                <th scope="col">Expencea Docu</th>
+                <th scope="col">Expense</th>
                 <th scope="col">Transport</th>
                 <th scope="col">Petrol</th>
                 <th scope="col">Spare Parts</th>
                 <th scope="col">Patch/Paint</th>
-                <th scope="col">Insur</th>
+                <th scope="col">Insurance</th>
                 <th scope="col">Tyre</th>
                 <th scope="col">SER</th>
-                <th scope="col">OTER</th>
-                <th scope="col">Total exp</th>
+                <th scope="col">Other</th>
+                <th scope="col">Total Expense</th>
                 <th scope="col">Cost</th>
                 <th scope="col">Price Sold</th>
                 <th scope="col">Profit</th>
-                <th></th>
+               
               </tr>
             </thead>
             <tbody>

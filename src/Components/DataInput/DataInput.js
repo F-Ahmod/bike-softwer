@@ -43,11 +43,11 @@ const DataInput = () => {
                 style={{ width: "100%" }}
                 className=""
                 type="text"
-                {...register("name", { required: true })}
+                {...register("asset", { required: true })}
               />
             </div>
 
-            <div>
+            {/* <div>
               <label className="d-block mt-3">Year</label>
               <input
                 style={{ width: "100%" }}
@@ -56,7 +56,7 @@ const DataInput = () => {
                 max="2099"
                 {...register("year", { required: true })}
               />
-            </div>
+            </div> */}
 
             <div>
               <label className="d-block mt-3">Transport</label>
@@ -92,7 +92,7 @@ const DataInput = () => {
               <label className="d-block mt-3">Patch/Paint</label>
               <input
                 style={{ width: "100%" }}
-                type="text"
+                type="number"
                 {...register("patchPaint", { required: true })}
               />
             </div>
@@ -148,7 +148,7 @@ const DataInput = () => {
           {/* left site */}
 
           <div className="col-6">
-            <div>
+            {/* <div>
               <label className="d-block mt-2">Ragistration number</label>
               <input
                 style={{ width: "100%" }}
@@ -156,7 +156,7 @@ const DataInput = () => {
                 type="text"
                 {...register("RagistrationNumber", { required: true })}
               />
-            </div>
+            </div> */}
 
             <div className="">
               <label className="d-block mt-3">Amount</label>
@@ -169,7 +169,7 @@ const DataInput = () => {
             </div>
 
             <div className="">
-              <label className="d-block mt-3">Expencea Docu</label>
+              <label className="d-block mt-3">Expense</label>
               <input
                 style={{ width: "100%" }}
                 className=""
@@ -189,12 +189,12 @@ const DataInput = () => {
             </div>
 
             <div>
-              <label className="d-block mt-3">Insur</label>
+              <label className="d-block mt-3">Insurance</label>
               <input
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("insur", { required: true })}
+                {...register("insurance", { required: true })}
               />
             </div>
 
@@ -219,12 +219,12 @@ const DataInput = () => {
             </div>
 
             <div>
-              <label className="d-block mt-3">OTER</label>
+              <label className="d-block mt-3">Other</label>
               <input
                 style={{ width: "100%" }}
                 className=""
                 type="number"
-                {...register("oter", { required: true })}
+                {...register("other", { required: true })}
               />
             </div>
 

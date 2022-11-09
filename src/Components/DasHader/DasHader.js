@@ -1,14 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import GrapChat from "../GrapChat/GrapChat";
 import ListAlllPurchases from "../ListAlllPurchases/ListAlllPurchases";
 
 const DasHader = () => {
   const [purchases, setPurchases] = useState([]);
   const [bikes, setBikes] = useState([]);
-  
 
   useEffect(() => {
- 
     fetch("https://bike-soft.herokuapp.com/purchase")
       .then((data) => data.json())
 
@@ -16,22 +15,18 @@ const DasHader = () => {
         console.log(res);
 
         setPurchases(res);
-       
       });
   }, []);
-  
 
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-  
     const res = await axios.post("https://bike-soft.herokuapp.com/newpurhase", {
       date: new Date().toISOString().split("T")[0],
     });
     setBikes(res.data);
-    
   };
   return (
     <div>
@@ -40,7 +35,9 @@ const DasHader = () => {
           <div className="mb-npx">
             <div className="row align-items-center">
               <div className="col-sm-6 col-12 mb-4 mb-sm-0">
-                <h1 className="h2 mb-0 ls-tight">Bike Showroom Management System</h1>
+                <h1 className="h2 mb-0 ls-tight">
+                  Bike showroom management system
+                </h1>
               </div>
 
               <div className="col-sm-6 col-12 text-sm-end"></div>
@@ -76,13 +73,13 @@ const DasHader = () => {
                   <div className="row">
                     <div className="col">
                       <span className="h6 font-semibold text-muted text-sm d-block mb-2">
-                        All Sale
+                        All sale
                       </span>
-                      <span className="h3 font-bold mb-0">{ purchases.length }</span>
+                      <span className="h3 font-bold mb-0">
+                        {purchases.length}
+                      </span>
                     </div>
-                   
                   </div>
-                 
                 </div>
               </div>
             </div>
@@ -92,23 +89,46 @@ const DasHader = () => {
                   <div className="row">
                     <div className="col">
                       <span className="h6 font-semibold text-muted text-sm d-block mb-2">
-                        New Bike
+                        Today bike
                       </span>
-                      <span className="h3 font-bold mb-0">{bikes.length }</span>
+                      <span className="h3 font-bold mb-0">{bikes.length}</span>
                     </div>
-                    
                   </div>
-                  
                 </div>
               </div>
             </div>
-           
-            
+            <div className="col-xl-3 col-sm-6 col-12">
+              <div className="card shadow border-0">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col">
+                      <span className="h6 font-semibold text-muted text-sm d-block mb-2">
+                        Amount
+                      </span>
+                      <span className="h3 font-bold mb-0">{bikes.length}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-3 col-sm-6 col-12">
+              <div className="card shadow border-0">
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col">
+                      <span className="h6 font-semibold text-muted text-sm d-block mb-2">
+                        Total pofite
+                      </span>
+                      <span className="h3 font-bold mb-0">{bikes.length}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div className="card shadow border-0 mb-7">
-            
-            <ListAlllPurchases/>
-           
+            {/* <ListAlllPurchases /> */}
+            <GrapChat/>
           </div>
         </div>
       </main>
