@@ -41,7 +41,7 @@ const UpdateForm = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.put("http://localhost:5000/updaateForm", { ...data, _id });
+    await axios.put("https://bike-soft.herokuapp.com/updaateForm", { ...data, _id });
     setMessage("Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);

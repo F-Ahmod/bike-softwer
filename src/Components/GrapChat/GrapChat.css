@@ -1,0 +1,22 @@
+.table thead th {
+    padding-top: 5px !important;
+    padding-bottom: 8px !important;
+    font-size: .675rem;
+    /* font-weight: 500; */
+    /* text-transform: uppercase; */
+    letter-spacing: .025em;
+    background-color: transparent;
+    border-bottom-width: 1px;
+    color: #525f7f;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.table thead td{
+    padding-top: 5px !important;
+    padding-bottom: 8px !important;
+}
+.table td {
+    font-size: 5px !important;
+    white-space: nowrap;
+}
+

@@ -1,5 +1,12 @@
 import React from "react";
 import { AiOutlineLogin } from "react-icons/ai";
+import { BiHome } from "react-icons/bi";
+import { RiMotorbikeLine } from "react-icons/ri";
+import { BiPurchaseTagAlt } from "react-icons/bi";
+import { GiJerusalemCross } from "react-icons/gi";
+import { GiExpense } from "react-icons/gi";
+import { BiPurchaseTag } from "react-icons/bi";
+import { GiCrescentStaff } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
 import useFirebase from "../../Firebase/useFirebase";
 import Accordion from "react-bootstrap/Accordion";
@@ -44,7 +51,7 @@ const Deshbord = () => {
               <ul className="navbar-nav">
                 <li className="nav-item mb-3">
                   <Link className="nav-link " to="/dasHader">
-                    <i className="bi bi-people ms-2"></i> Home
+                    <BiHome className="me-2 text-dark"/> Home
                   </Link>
                 </li>
               </ul>
@@ -52,7 +59,7 @@ const Deshbord = () => {
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0" className=" mb-3 ">
                   <Accordion.Header className="">
-                    <i className="bi bi-people me-4 "></i>Manage vehicle
+                    <RiMotorbikeLine  className="me-4"/>Manage vehicle
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link mb-1" to="/AllBike">
@@ -65,7 +72,7 @@ const Deshbord = () => {
                 </Accordion.Item>
                 <Accordion.Item eventKey="1" className="mb-4">
                   <Accordion.Header>
-                    <i className="bi bi-people me-4"></i> Purchase
+                    <BiPurchaseTagAlt className="me-4"/> Purchase
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/listAlllPurchases">
@@ -80,7 +87,7 @@ const Deshbord = () => {
 
                 <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                    <i className="bi bi-people me-4"></i> Bike sale
+                  <GiJerusalemCross className="me-4"/> Bike sale
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/BuyerDetails">
@@ -96,7 +103,7 @@ const Deshbord = () => {
 
                 <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                    <i className="bi bi-people me-4"></i> Bike Expences
+                    <GiExpense className="me-4"/> Bike Expences
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/dataInput">
@@ -112,13 +119,13 @@ const Deshbord = () => {
               <ul className="navbar-nav">
                 <li className="nav-item mb-5">
                   <Link className="nav-link  " to="/buyForm">
-                    <i className="bi bi-people ms-2"></i> Bike purchase
+                  <BiPurchaseTag className="me-2 text-dark"/> Bike purchase
                   </Link>
                 </li>
 
                 <li className="nav-item mb-3">
                   <Link className="nav-link" to="/makeadmin">
-                    <i className="bi bi-bar-chart ms-2"></i> Make staf
+                    < GiCrescentStaff className="me-2 text-dark" /> Make staff
                   </Link>
                 </li>
                 {/* <li className="nav-item mb-3">

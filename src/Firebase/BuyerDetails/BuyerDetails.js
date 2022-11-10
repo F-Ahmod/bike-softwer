@@ -17,7 +17,7 @@ const BuyerDetails = () => {
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.post("http://localhost:5000/BuyerDetails ", data);
+    await axios.post("https://bike-soft.herokuapp.com/BuyerDetails ", data);
     setMessage("Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);

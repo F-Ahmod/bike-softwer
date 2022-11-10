@@ -65,7 +65,7 @@ const GrapChat = () => {
         label: "secend Dataset",
         data: [10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
         backgroundColor: "AliceBlue",
-        borderColor: "green",
+        // borderColor: "green",
         tension: 0.4,
         fill: true,
         pointStyle: "rect",
@@ -84,9 +84,9 @@ const GrapChat = () => {
     datasets: [
       {
         label: "Thred Dataset",
-        data: [10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
+        data: [10,  30,  51, 82, 31, 59,  73,58],
         backgroundColor: "AliceBlue",
-        borderColor: "green",
+        // borderColor: "green",
         tension: 0.4,
         fill: true,
         pointStyle: "rect",

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import GrapChat from "../GrapChat/GrapChat";
-import ListAlllPurchases from "../ListAlllPurchases/ListAlllPurchases";
+
 
 const DasHader = () => {
   const [purchases, setPurchases] = useState([]);

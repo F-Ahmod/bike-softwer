@@ -59,7 +59,7 @@ const NewPurchacs = () => {
               </div>
             </div>
           ) : (
-            <h6>No any purchased today.</h6>
+            <h6 className="d-flex justify-content-center mt-5">No any purchased today.</h6>
           )}
         </div>
       )}
