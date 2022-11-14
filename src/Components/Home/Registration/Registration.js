@@ -11,7 +11,7 @@ const Registration = () => {
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     handleUserRegister(data.name, data.email, data.password);
     return navigate("/");
   };

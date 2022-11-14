@@ -29,7 +29,7 @@ const AllBike = () => {
       ) : (
         <div className="card shadow border-0 mb-7">
           <div className="card-header">
-            <h5 className="mb-0">Applications</h5>
+            <h5 className="mb-0">All Bikes</h5>
           </div>
           <div className="table-responsive">
             <table className="table table-hover ">
@@ -58,6 +58,7 @@ const AllBike = () => {
                     loadData={loadData}
                     reamingData={reamingData}
                     plan={plan}
+                    key={plan._id}
                   ></Plans>
                 ))}
               </tbody>

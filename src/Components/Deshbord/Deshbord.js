@@ -62,24 +62,25 @@ const Deshbord = () => {
                     <RiMotorbikeLine  className="me-4"/>Manage vehicle
                   </Accordion.Header>
                   <Accordion.Body>
+                  <Link className="nnav-link" to="/AddBike">
+                     a. Add bike
+                    </Link>
                     <Link className="nnav-link mb-1" to="/AllBike">
-                      All bike
+                     b. List all bike
                     </Link>
-                    <Link className="nnav-link" to="/AddBike">
-                      Add bike
-                    </Link>
+                    
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1" className="mb-4">
                   <Accordion.Header>
-                    <BiPurchaseTagAlt className="me-4"/> Purchase
+                    <BiPurchaseTagAlt className="me-4"/> Bike purchase
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/listAlllPurchases">
-                      List all purchases
+                      a. All purchases
                     </Link>
                     <Link className="nnav-link" to="/newPurchacs">
-                      Today purchase
+                      b. New purchase
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -107,10 +108,10 @@ const Deshbord = () => {
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/dataInput">
-                    Data Input
+                    Add Purchase Expense
                     </Link>
                     <Link className="nnav-link" to="/dataInputUI">
-                    Data Input UI
+                    All Purchase Expenses
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -128,16 +129,7 @@ const Deshbord = () => {
                     < GiCrescentStaff className="me-2 text-dark" /> Make staff
                   </Link>
                 </li>
-                {/* <li className="nav-item mb-3">
-                  <Link className="nav-link" to="/dataInput">
-                    <i className="bi bi-bar-chart ms-2"></i> DataInput
-                  </Link>
-                </li>
-                <li className="nav-item mb-3">
-                  <Link className="nav-link" to="/dataInputUI">
-                    <i className="bi bi-bar-chart ms-2"></i> DataInputUI
-                  </Link>
-                </li> */}
+               
               </ul>
 
               <hr className="navbar-divider opacity-20" />

@@ -41,7 +41,7 @@ const MakeAdmin = () => {
             {msg}
           </div>
         )}
-        <input className="bott mt-3" type="submit" value="Make a Staf" />
+        <input className="bott mt-3" type="submit" value="Make a Staff" />
       </form>
     </div>
   );

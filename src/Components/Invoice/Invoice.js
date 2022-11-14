@@ -15,7 +15,7 @@ const Invoice = () => {
       .then((data) => setDetails(data));
   }, []);
   const mach = details?.find((a) => a?._id === _id);
-  console.log(mach);
+  // console.log(mach);
   const ref = useRef();
   return (
     <div ref={ref} className="header mx-auto  m-5">

@@ -23,7 +23,7 @@ const UpdateForm = () => {
     .then((data) => setDetails(data));
   const mach = details?.find((a) => a?._id === _id);
 
-  console.log(mach);
+  // console.log(mach);
 
   useEffect(() => {
     fetch("https://bike-soft.herokuapp.com/addBikes")
@@ -83,7 +83,7 @@ const UpdateForm = () => {
         <p>Bike Name {mach?.bikeName}</p>
         <p>Year {mach?.year}</p>
         <p>Model {mach?.model}</p>
-        <p>Purchas Date {mach?.date}</p>
+        <p>Purchase Date {mach?.date}</p>
 
       </div>
       </div>
@@ -166,7 +166,7 @@ const UpdateForm = () => {
               </select>
             </div>
             <div>
-              <label className="d-block  mt-3">Bike Modle</label>
+              <label className="d-block  mt-3">Bike Model</label>
               <input
                 defaultValue={mach?.modle}
                 style={{ width: "100%" }}
@@ -191,7 +191,7 @@ const UpdateForm = () => {
               })}
             </div> */}
             <div>
-              <label className="d-block mt-3">Purchas Date</label>
+              <label className="d-block mt-3">Purchase Date</label>
               <input
                 defaultValue={mach?.date}
                 style={{ width: "100%" }}

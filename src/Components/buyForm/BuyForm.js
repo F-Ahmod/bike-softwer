@@ -7,6 +7,7 @@ import useFirebase from "../../Firebase/useFirebase";
 import "./BuyForm.css";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router";
 const BuyForm = ({updatedBike}) => {
   const { storage } = useFirebase();
   const [imageUpload, setImageUpload] = useState(null);
@@ -14,7 +15,9 @@ const BuyForm = ({updatedBike}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [bikes, setBikes] = useState([]);
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
+  
   useEffect(() => {
     fetch("https://bike-soft.herokuapp.com/addBikes")
       .then((data) => data.json())
@@ -27,6 +30,7 @@ const BuyForm = ({updatedBike}) => {
     handleSubmit,
     reset,
     formState: { errors },
+    
   } = useForm();
   const onSubmit = async (data) => {
     setIsLoading(true);
@@ -36,6 +40,7 @@ const BuyForm = ({updatedBike}) => {
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);
     reset();
+    navigate('/listAlllPurchases')
   };
   ref(storage, "images/");
   const uplodFile = () => {
@@ -253,7 +258,7 @@ const BuyForm = ({updatedBike}) => {
                 {...register("ragistrationNumber", { required: true })}
               />
             </div>
-            <div>
+            {/* <div>
               <label className="d-block mt-3">Previous Name </label>
               <input
                 defaultValue={updatedBike?.previousOwnerName}
@@ -262,7 +267,7 @@ const BuyForm = ({updatedBike}) => {
                 type="text"
                 {...register("previousOwnerName", { required: true })}
               />
-            </div>
+            </div> */}
             <div>
               <label className="d-block  mt-3">Purchased By</label>
               <input
@@ -286,7 +291,7 @@ const BuyForm = ({updatedBike}) => {
           </div>
         </div>
         <hr className="inputColor" />
-        <div className="row">
+        {/* <div className="row">
           <div className="col-6">
             <div>
               <h4>Purchase Expenses</h4>
@@ -356,7 +361,7 @@ const BuyForm = ({updatedBike}) => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* {!isLoading ? <input type="submit" /> : <h6>Submiting...</h6> } */}
         {isLoading ? (

@@ -4,7 +4,7 @@ import SingleListPurchase from "../SingleListPurchase/SingleListPurchase";
 const ListAlllPurchases = () => {
   const [purchases, setPurchases] = useState([]);
   const [loding, setLoding] = useState(false);
-
+  const [sarch, setSarch] = useState([]);
   useEffect(() => {
     setLoding(true);
     fetch("https://bike-soft.herokuapp.com/purchase")
@@ -13,16 +13,35 @@ const ListAlllPurchases = () => {
         console.log(res);
         setPurchases(res);
         setLoding(false);
+        setSarch(res);
       });
   }, []);
+  const handelSaerch = (e) => {
+    const bikeSarch = purchases.filter((bike) =>
+      bike?.ownerName?.toLowerCase().includes(e?.target?.value?.toLowerCase())
+    );
+    setSarch(bikeSarch);
+    // console.log(a);
+  };
   return (
     <div>
       {loding && <h3 className="text-center mt-5">Loading...</h3>}
 
       <div className="card shadow border-0 mb-7">
-        <div className="card-header">
-          <h5 className="mb-0">All Purchases</h5>
+        <div className="row mt-5 mb-3">
+          <div className=" col-md-6">
+            <h5 className="">All Purchases</h5>
+          </div>
+          <div className="col-md-6">
+            <input
+              className=" w-50 bg-light border rounded"
+              placeholder="Write your bike"
+              type="text"
+              onChange={(e) => handelSaerch(e)}
+            />
+          </div>
         </div>
+
         <div className="table-responsive">
           <table className="table table-hover ">
             <thead className="thead-light">
@@ -34,17 +53,20 @@ const ListAlllPurchases = () => {
                 <th scope="col">Address</th>
                 <th scope="col">National Id Number</th>
                 <th scope="col">Registration Number</th>
-                {/* <th scope="col">Company Name</th> */}
                 <th scope="col">Date</th>
-                <th scope="col">Purchase Expenses</th>
-                <th scope="col">Selling expenses</th>
+                {/* <th scope="col">Company Name</th> */}
+                {/* <th scope="col">Purchase Expenses</th>
+                <th scope="col">Selling expenses</th> */}
                 <th scope="col">Rc</th>
                 <th>ACTION</th>
               </tr>
             </thead>
             <tbody>
-              {purchases?.map((purchase) => (
-                <SingleListPurchase purchase={purchase}></SingleListPurchase>
+              {[...sarch].reverse()?.map((purchase) => (
+                <SingleListPurchase
+                  purchase={purchase}
+                  key={purchase._id}
+                ></SingleListPurchase>
               ))}
             </tbody>
           </table>

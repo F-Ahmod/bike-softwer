@@ -25,7 +25,7 @@ import DataInputUI from "./Components/DataInputUI/DataInputUI";
 import UpDateBike from "./Components/UpDateBike/UpDateBike";
 import GrapChat from "./Components/GrapChat/GrapChat";
 import UpdateForm from "./Components/UpdateForm/UpdateForm";
-
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 function App() {
   return (
@@ -33,18 +33,16 @@ function App() {
       {/* <Router> */}
       {/* <Header></Header> */}
       <Routes>
-        <Route path="#" element={<Home />} />
-        <Route path="/" element={<Deshbord />} />  
+        <Route element={<PrivateRoutes />}>
+          <Route element={<Home />} />
+        </Route>
+
         <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
+
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/bookplan/:planId" element={<BookPlan />} />
         <Route path="/forgetPassword" element={<ForgetPassword />} />
-
-       
 
         <Route path="/" element={<Deshbord />}>
           <Route index element={<DasHader />} />
@@ -55,15 +53,14 @@ function App() {
           <Route path="/upDateBike/:_id" element={<UpDateBike />} />
           <Route path="/updateForm/:_id" element={<UpdateForm />} />
           <Route path="/grapChat" element={<GrapChat />} />
-          <Route path="/listAlllPurchases" element={<ListAlllPurchases/>} />  
-          <Route path="/newPurchacs" element={<NewPurchacs/>} />  
-          <Route path="/singleListPurchase" element={<SingleListPurchase/>} /> 
+          <Route path="/listAlllPurchases" element={<ListAlllPurchases />} />
+          <Route path="/newPurchacs" element={<NewPurchacs />} />
+          <Route path="/singleListPurchase" element={<SingleListPurchase />} />
           <Route path="AllBike" element={<AllBike />} />
           <Route path="AddBike" element={<AddBike />} />
           <Route path="dataInput" element={<DataInput />} />
           <Route path="dataInputUI" element={<DataInputUI />} />
 
-          {/* <Route path="makeadmin" element={<AdminRoute> <MakeAdmin /> </AdminRoute>} /> */}
           <Route path="makeadmin" element={<MakeAdmin />} />
         </Route>
       </Routes>
