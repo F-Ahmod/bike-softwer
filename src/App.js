@@ -2,12 +2,9 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 //import Header from "./Components/Home/Header/Header";
 import Home from "./Components/Home/Home";
-import About from "./Components/Home/About/About";
 import AllBike from "./Components/Home/AllBike/AllBike";
-import Gallery from "./Components/Home/Gallery/Gallery";
-import Contact from "./Components/Home/Contact/Contact";
 import Login from "./Components/Home/Login/Login";
-import MakeAdmin from "./Firebase/MakeAdmin/MakeAdmin";
+import MakeStaff from "./Firebase/MakeStaff/MakeStaff";
 import BookPlan from "./Components/BookPlan/BookPlan";
 import DasHader from "./Components/DasHader/DasHader";
 import Deshbord from "./Components/Deshbord/Deshbord";
@@ -26,6 +23,7 @@ import UpDateBike from "./Components/UpDateBike/UpDateBike";
 import GrapChat from "./Components/GrapChat/GrapChat";
 import UpdateForm from "./Components/UpdateForm/UpdateForm";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import LisstAllStaff from "./Components/LisstAllStaff/LisstAllStaff";
 
 function App() {
   return (
@@ -61,7 +59,8 @@ function App() {
           <Route path="dataInput" element={<DataInput />} />
           <Route path="dataInputUI" element={<DataInputUI />} />
 
-          <Route path="makeadmin" element={<MakeAdmin />} />
+          <Route path="makeStaff" element={<MakeStaff />} />
+          <Route path="listAllStafff" element={< LisstAllStaff/>} />
         </Route>
       </Routes>
       {/* </Router> */}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./GrapChat.css";
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
@@ -13,6 +13,7 @@ import {
   PointElement,
   Filler,
 } from "chart.js";
+import axios from "axios";
 ChartJS.register(
   Title,
   Tooltip,
@@ -24,25 +25,21 @@ ChartJS.register(
   Filler
 );
 const GrapChat = () => {
+  const [looding,setLooding]=useState(true)
+
+
+ const  [monthData,setMonthData]=useState([]);
+  
   const [data, setData] = useState({
     labels: [
       "Jan",
-      "Feb",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "Oct",
-      "Nov",
-      "Dec",
+      "dec"
+      
     ],
     datasets: [
       {
         label: "First Dataset",
-        data: [10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
+        data: [monthData.length,monthData.length+3],
         backgroundColor: "AliceBlue",
         borderColor: "green",
         tension: 0.4,
@@ -54,6 +51,24 @@ const GrapChat = () => {
       },
     ],
   });
+
+
+  
+  const month = async  () => {
+    setLooding(true)
+    const a = await axios.post("http://localhost:5000/monthPurchase",{month:"November"});
+    // console.log(a);
+    setMonthData(a.data);
+    setLooding(false)
+  }
+ 
+  useEffect(() => {
+    
+    month()
+  }, []);
+
+  
+console.log(monthData.length);
   const [secendData, setSecendData] = useState({
     labels: [
         "Jan",
@@ -63,7 +78,7 @@ const GrapChat = () => {
     datasets: [
       {
         label: "secend Dataset",
-        data: [10, 20, 30, 42, 51, 82, 31, 59, 61, 73, 91, 58],
+        data: [monthData.length,monthData.length+10],
         backgroundColor: "AliceBlue",
         // borderColor: "green",
         tension: 0.4,
@@ -96,6 +111,9 @@ const GrapChat = () => {
       },
     ],
   });
+  if(looding){
+    return
+  }
   return (
     <div className="row">
     <div className="col-md-8" >

@@ -51,7 +51,7 @@ const Deshbord = () => {
               <ul className="navbar-nav">
                 <li className="nav-item mb-3">
                   <Link className="nav-link " to="/dasHader">
-                    <BiHome className="me-2 text-dark"/> Home
+                    <BiHome className="me-2 text-dark" /> Home
                   </Link>
                 </li>
               </ul>
@@ -59,21 +59,21 @@ const Deshbord = () => {
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0" className=" mb-3 ">
                   <Accordion.Header className="">
-                    <RiMotorbikeLine  className="me-4"/>Manage vehicle
+                    <RiMotorbikeLine className="me-4" />
+                    Manage vehicle
                   </Accordion.Header>
                   <Accordion.Body>
-                  <Link className="nnav-link" to="/AddBike">
-                     a. Add bike
+                    <Link className="nnav-link" to="/AddBike">
+                      a. Add bike
                     </Link>
                     <Link className="nnav-link mb-1" to="/AllBike">
-                     b. List all bike
+                      b. List all bike
                     </Link>
-                    
                   </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1" className="mb-4">
                   <Accordion.Header>
-                    <BiPurchaseTagAlt className="me-4"/> Bike purchase
+                    <BiPurchaseTagAlt className="me-4" /> Bike purchase
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/listAlllPurchases">
@@ -85,33 +85,69 @@ const Deshbord = () => {
                   </Accordion.Body>
                 </Accordion.Item>
 
-
-                <Accordion.Item eventKey="2" className="mb-4">
+                {/* <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                  <GiJerusalemCross className="me-4"/> Bike sale
+                    <GiJerusalemCross className="me-4" /> Bike sale
                   </Accordion.Header>
+
                   <Accordion.Body>
-                    <Link className="nnav-link" to="/BuyerDetails">
-                      Buyer details
-                    </Link>
-                    {/* <Link className="nnav-link" to="/invoice">
-                      Invoice
-                    </Link> */}
+                    
+                    <Accordion.Item eventKey="2" className="mb-4">
+                      <Accordion.Header>
+                        <GiJerusalemCross className="me-4" /> A sale
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <Link className="nnav-link" to="/BuyerDetails">
+                          Buyer details
+                        </Link>
+                        <Link className="nnav-link" to="/BuyerDetails">
+                          Buyer details
+                        </Link>
+                      </Accordion.Body>
+                    </Accordion.Item>
+
+
+                    <Accordion.Item eventKey="2" className="mb-4">
+                      <Accordion.Header>
+                        <GiJerusalemCross className="me-4" /> A sale
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <Link className="nnav-link" to="/BuyerDetails">
+                          Buyer details
+                        </Link>
+                        <Link className="nnav-link" to="/BuyerDetails">
+                          Buyer details
+                        </Link>
+                      </Accordion.Body>
+                    </Accordion.Item>
                   </Accordion.Body>
-                </Accordion.Item>
-
-
+                </Accordion.Item> */}
 
                 <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                    <GiExpense className="me-4"/> Bike Expences
+                    <GiExpense className="me-4" /> Bike Expences
                   </Accordion.Header>
                   <Accordion.Body>
                     <Link className="nnav-link" to="/dataInput">
-                    Add Purchase Expense
+                      Add Purchase Expense
                     </Link>
                     <Link className="nnav-link" to="/dataInputUI">
-                    All Purchase Expenses
+                      All Purchase Expenses
+                    </Link>
+                  </Accordion.Body>
+                </Accordion.Item>
+
+                <Accordion.Item eventKey="3" className=" mb-3 ">
+                  <Accordion.Header className="">
+                  <GiCrescentStaff className="me-4 " />
+                    Manage Staff
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <Link className="nnav-link" to="/listAllStafff">
+                      a. List all Staff
+                    </Link>
+                    <Link className="nnav-link mb-1" to="/makeStaff">
+                      b. Add new staff
                     </Link>
                   </Accordion.Body>
                 </Accordion.Item>
@@ -120,17 +156,17 @@ const Deshbord = () => {
               <ul className="navbar-nav">
                 <li className="nav-item mb-5">
                   <Link className="nav-link  " to="/buyForm">
-                  <BiPurchaseTag className="me-2 text-dark"/> Bike purchase
+                    <BiPurchaseTag className="me-2 text-dark" /> Bike purchase
                   </Link>
                 </li>
 
-                <li className="nav-item mb-3">
+                {/* <li className="nav-item mb-3">
                   <Link className="nav-link" to="/makeadmin">
-                    < GiCrescentStaff className="me-2 text-dark" /> Make staff
+                    <GiCrescentStaff className="me-2 text-dark" /> Manage Staff
                   </Link>
-                </li>
-               
+                </li> */}
               </ul>
+              
 
               <hr className="navbar-divider opacity-20" />
 
@@ -156,7 +192,7 @@ const Deshbord = () => {
             </div>
           </div>
         </nav>
-        <div className="h-screen flex-grow-1 overflow-y-lg-auto">        
+        <div className="h-screen flex-grow-1 overflow-y-lg-auto">
           <Outlet />
         </div>
       </div>

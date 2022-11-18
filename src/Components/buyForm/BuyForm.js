@@ -8,7 +8,7 @@ import "./BuyForm.css";
 import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router";
-const BuyForm = ({updatedBike}) => {
+const BuyForm = ({ updatedBike }) => {
   const { storage } = useFirebase();
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
@@ -17,7 +17,23 @@ const BuyForm = ({updatedBike}) => {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const d = new Date();
+  const name = month[d.getMonth()];
+
   useEffect(() => {
     fetch("https://bike-soft.herokuapp.com/addBikes")
       .then((data) => data.json())
@@ -30,17 +46,16 @@ const BuyForm = ({updatedBike}) => {
     handleSubmit,
     reset,
     formState: { errors },
-    
   } = useForm();
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.post("https://bike-soft.herokuapp.com/purchase ", data);
+    await axios.post("https://bike-soft.herokuapp.com/purchase", {...data,month:name});
     setMessage("Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);
     reset();
-    navigate('/listAlllPurchases')
+    navigate("/listAlllPurchases");
   };
   ref(storage, "images/");
   const uplodFile = () => {
@@ -79,7 +94,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block mt-2">Mobile number</label>
               <input
-               defaultValue={updatedBike?.mobileNumber}
+                defaultValue={updatedBike?.mobileNumber}
                 style={{ width: "100%" }}
                 className=""
                 type="tel"
@@ -93,7 +108,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block mt-2">Addres</label>
               <input
-               defaultValue={updatedBike?.addres}
+                defaultValue={updatedBike?.addres}
                 style={{ width: "100%" }}
                 type="text"
                 className=""
@@ -109,8 +124,7 @@ const BuyForm = ({updatedBike}) => {
               <label className="d-block mt-2">Email</label>
 
               <input
-               
-               defaultValue={updatedBike?.email}
+                defaultValue={updatedBike?.email}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
@@ -147,7 +161,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block  mt-3">Bike Modle</label>
               <input
-               defaultValue={updatedBike?.modle}
+                defaultValue={updatedBike?.modle}
                 style={{ width: "100%" }}
                 className=""
                 type="text"
@@ -174,7 +188,7 @@ const BuyForm = ({updatedBike}) => {
             <div>
               <label className="d-block mt-3">Purchas Date</label>
               <input
-               defaultValue={updatedBike?.date}
+                defaultValue={updatedBike?.date}
                 style={{ width: "100%" }}
                 className=""
                 type="date"
