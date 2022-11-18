@@ -9,17 +9,32 @@ const Invoice = () => {
   const { _id } = useParams();
 
   const [details, setDetails] = useState([]);
+  const [total, setTotal] = useState([]);
+  const [amount_Paid, setAmount_Paid] = useState([]);
+
+  const handleTotal = event => {
+    setTotal(event.target.value);
+  }; 
+  console.log(total);
+  const handleAmount_Paid = event => {
+    setAmount_Paid(event.target.value);
+  }; 
+ const totalDue= total-amount_Paid
+
+
+
   useEffect(() => {
     fetch(`https://bike-soft.herokuapp.com/purchase`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, []);
   const mach = details?.find((a) => a?._id === _id);
-  // console.log(mach);
+
   const ref = useRef();
   return (
     <div ref={ref} className="header mx-auto  m-5">
       <h1 className="h1 mb-5">Invoice</h1>
+ 
       <hr className="bg-dark" />
       <address>
         <h5>Recive</h5>
@@ -62,55 +77,55 @@ const Invoice = () => {
           </table>
         </div>
 
-       <div className="">
-       <table class="table table-bordered ">
-          <thead>
-            <tr>
-              <th scope="col">Bike Model</th>
-              <th scope="col">Year</th>
-              <th scope="col">Ragistration Number</th>
-              <th scope="col">Company Name</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">{mach?.modle}</th>
-              <td>{mach?.year}</td>
-              <td>{mach?.ragistrationNumber}</td>
-              <td>{mach?.companyName}</td>
-            </tr>
-          </tbody>
-        </table>
-       </div>
-        {/* <a className="add">+</a> */}
+        <div className="">
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <th scope="col">Bike Model</th>
+                <th scope="col">Year</th>
+                <th scope="col">Ragistration Number</th>
+                <th scope="col">Company Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{mach?.modle}</th>
+                <td>{mach?.year}</td>
+                <td>{mach?.ragistrationNumber}</td>
+                <td>{mach?.companyName}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+       
         <table className="balance">
           <tr>
             <th className="th">
-              <span className="span">Total</span>
+              <span className="span mt-3">Total</span>
             </th>
-            <td className="td">
-              {/* <span data-prefix>$</span> */}
-              <span>$ 600.00</span>
+            <td >
+            <input className="text-center" type="number" placeholder="$ 000" onChange={handleTotal}/>
             </td>
           </tr>
           <tr>
-            <th className="th">
-              <span>Amount_Paid</span>
+            <th >
+              <span className=" mt-3 me-3">Amount_Paid</span>
             </th>
-            <td className="td">
-              {/* <span data-prefix>$</span> */}
-              <span>$ 0.00</span>
+            <td >
+            <input className=" text-center" type="number" placeholder="$ 000" onChange={handleAmount_Paid}/>
             </td>
           </tr>
           <tr>
-            <th className="th">
-              <span>Balance_Due</span>
+            <th>
+              <span >Balance_Due</span>
             </th>
-            <td>
-              {/* <span data-prefix>$</span> */}
-              <span>$ 600.00</span>
+            <td className="mt-3">
+           <span style={{marginRight:"95px"}} >$ {totalDue}</span>
             </td>
           </tr>
+
+
+          
         </table>
       </article>
       <hr />
@@ -125,11 +140,15 @@ const Invoice = () => {
           </p> */}
         </div>
       </aside>
+
+    
       <ReactPrint
         trigger={() => <button>Print</button>}
         content={() => ref.current}
       />
+
     </div>
+    
   );
 };
 

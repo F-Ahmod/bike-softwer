@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleDataInputUI = ({ dataInputUi }) => {
   const {
-    serial,asset,year,ragistrationNumber,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insurance,tyre,ser,other,totalExp} = dataInputUi;
+    serial,asset,rc,yardRent,expenceDocu,transportMils,petrol,spareParts,patchPaint,cost,priceSold,amount,insurance,tyre,ser,other,totalExp} = dataInputUi;
 
     const profiet = parseInt(amount)- parseInt(yardRent) - parseInt(expenceDocu) - parseInt(transportMils) - parseInt(petrol) - parseInt(spareParts) -  parseInt(patchPaint) - parseInt(insurance) - parseInt(tyre) - parseInt(ser) - parseInt(other) - parseInt(totalExp) - parseInt(cost)
   return (

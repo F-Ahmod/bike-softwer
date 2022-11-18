@@ -56,7 +56,7 @@ const GrapChat = () => {
   
   const month = async  () => {
     setLooding(true)
-    const a = await axios.post("http://localhost:5000/monthPurchase",{month:"November"});
+    const a = await axios.post("https://bike-soft.herokuapp.com/monthPurchase",{month:"November"});
     // console.log(a);
     setMonthData(a.data);
     setLooding(false)

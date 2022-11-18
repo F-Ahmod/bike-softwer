@@ -21,7 +21,7 @@ const ListAlllPurchases = () => {
       bike?.ownerName?.toLowerCase().includes(e?.target?.value?.toLowerCase())
     );
     setSarch(bikeSarch);
-    // console.log(a);
+   
   };
   return (
     <div>
@@ -35,7 +35,7 @@ const ListAlllPurchases = () => {
           <div className="col-md-6">
             <input
               className=" w-50 bg-light border rounded"
-              placeholder="Write your bike"
+              placeholder="Search Bike"
               type="text"
               onChange={(e) => handelSaerch(e)}
             />
@@ -54,11 +54,8 @@ const ListAlllPurchases = () => {
                 <th scope="col">National Id Number</th>
                 <th scope="col">Registration Number</th>
                 <th scope="col">Date</th>
-                {/* <th scope="col">Company Name</th> */}
-                {/* <th scope="col">Purchase Expenses</th>
-                <th scope="col">Selling expenses</th> */}
                 <th scope="col">Rc</th>
-                <th>ACTION</th>
+                <th scope="col">ACTION</th>
               </tr>
             </thead>
             <tbody>

@@ -46,12 +46,7 @@ const SingleListPurchase = ({ purchase }) => {
       <td>
         <p className="text-heading font-semibold">{date}</p>
       </td>
-      <td>
-        <p className="text-heading font-semibold">{amount1}</p>
-      </td>
-      <td>
-        <p className="text-heading font-semibold">{amount2}</p>
-      </td>
+      
     
       <td>
       <p className="text-heading font-semibold">{rc}</p>
