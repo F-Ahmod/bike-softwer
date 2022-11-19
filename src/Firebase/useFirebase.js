@@ -62,12 +62,8 @@ const useFirebase = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // console.log("storate sho",storage);
-        // fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user?.email}`)
-        //   .then((res) => res.json())
-        //   .then((data) => setAdmin(data?.role));
       }
-      fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user.email}`)
+      fetch(`https://bike-soft.herokuapp.com/checkAdmin/${user?.email}`)
         .then((data) => data.json())
         .then((res) => {
           setAdmin(res);

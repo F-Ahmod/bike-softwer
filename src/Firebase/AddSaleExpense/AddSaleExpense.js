@@ -3,17 +3,21 @@ import React, { useState } from "react";
 import { Alert, Button, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 
-const DataInput = () => {
+const AddSaleExpense = () => {
   const [isLoading, setIsLoading] = useState(false);
-  //   const [bikes, setBikes] = useState([]);
   const [message, setMessage] = useState("");
 
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+   
+  } = useForm();
   const onSubmit = async (data) => {
     setIsLoading(true);
     setMessage("");
-    await axios.post("https://bike-soft.herokuapp.com/dataInput ", data);
-    setMessage("data Added successfully.");
+    await axios.post("https://bike-soft.herokuapp.com/AddSaleExpense ", data);
+    setMessage("Added successfully.");
     setTimeout(() => setMessage(""), 3000);
     setIsLoading(false);
     reset();
@@ -21,10 +25,12 @@ const DataInput = () => {
   return (
     <div className=" mt-5 p-5 p-1" style={{ backgroundColor: "#FFFFFF" }}>
       {message && <Alert variant="success">{message}</Alert>}
+      
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="row"></div>
+       
         <div className="row">
-          <hr className="inputColor" />
+        <h5>Add Sales Expenses</h5>
+          <hr className="inputColor mt-2" />
           <div className="col-6 ">
             {/* right site  */}
 
@@ -137,16 +143,6 @@ const DataInput = () => {
           {/* left site */}
 
           <div className="col-6">
-            {/* <div>
-              <label className="d-block mt-2">Ragistration number</label>
-              <input
-                style={{ width: "100%" }}
-                className=""
-                type="text"
-                {...register("RagistrationNumber", { required: true })}
-              />
-            </div> */}
-
             <div className="">
               <label className="d-block mt-3">Amount</label>
               <input
@@ -226,7 +222,6 @@ const DataInput = () => {
                 {...register("totalExp", { required: true })}
               />
             </div>
-
           </div>
         </div>
 
@@ -250,4 +245,4 @@ const DataInput = () => {
   );
 };
 
-export default DataInput;
+export default AddSaleExpense;

@@ -58,21 +58,7 @@ const BuyForm = ({ updatedBike }) => {
     navigate("/listAlllPurchases");
   };
   ref(storage, "images/");
-  const uplodFile = () => {
-    if (imageUpload == null) return;
-    if (imageUrls.length === 4) {
-      return alert("Uploaded images maxiumum 4.");
-    }
-    setIsLoading(true);
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
-        setIsLoading(false);
-      });
-    });
-  };
-
+  
   return (
     <div className=" mt-5 p-5 p-1" style={{ backgroundColor: "#FFFFFF" }}>
       {message && <Alert variant="success">{message}</Alert>}

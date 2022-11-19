@@ -15,7 +15,6 @@ import ForgetPassword from "./Components/ForgetPassword/ForgetPassword";
 import Registration from "./Components/Home/Registration/Registration";
 import AddBike from "./Components/AddBike/AddBike";
 import NewPurchacs from "./Components/NewPurchacs/NewPurchacs";
-import BuyerDetails from "./Firebase/BuyerDetails/BuyerDetails";
 import Invoice from "./Components/Invoice/Invoice";
 import DataInput from "./Components/DataInput/DataInput";
 import DataInputUI from "./Components/DataInputUI/DataInputUI";
@@ -24,6 +23,8 @@ import GrapChat from "./Components/GrapChat/GrapChat";
 import UpdateForm from "./Components/UpdateForm/UpdateForm";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import LisstAllStaff from "./Components/LisstAllStaff/LisstAllStaff";
+import AllSalesExpenses from "./Components/AllSalesExpenses/AllSalesExpenses";
+import AddSaleExpense from "./Firebase/AddSaleExpense/AddSaleExpense";
 
 function App() {
   return (
@@ -46,7 +47,7 @@ function App() {
           <Route index element={<DasHader />} />
           <Route path="dasHader" element={<DasHader />} />
           <Route path="/buyForm" element={<BuyForm />} />
-          <Route path="/BuyerDetails" element={<BuyerDetails />} />
+          <Route path="/addSaleExp" element={<AddSaleExpense />} />
           <Route path="/invoice/:_id" element={<Invoice />} />
           <Route path="/upDateBike/:_id" element={<UpDateBike />} />
           <Route path="/updateForm/:_id" element={<UpdateForm />} />
@@ -58,7 +59,7 @@ function App() {
           <Route path="AddBike" element={<AddBike />} />
           <Route path="dataInput" element={<DataInput />} />
           <Route path="dataInputUI" element={<DataInputUI />} />
-
+          <Route path="allSalesExpenses" element={<AllSalesExpenses/>} />
           <Route path="makeStaff" element={<MakeStaff />} />
           <Route path="listAllStafff" element={< LisstAllStaff/>} />
         </Route>

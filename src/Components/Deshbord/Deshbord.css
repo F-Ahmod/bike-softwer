@@ -80,3 +80,29 @@
   color: #b8553c !important;
   transition: 1s; 
 }
+.av-link {
+  display: block;
+ margin-left: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #69cc76 ;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
+};
+.av-link:hover { 
+  color: #b8553c !important;
+  transition: 1s; 
+}
+
+.accordion-bbutton {
+    flex-shrink: 0; 
+    /* width: var(--bs-accordion-btn-icon-width); */
+    height: var(--bs-accordion-btn-icon-width);
+    margin-left: auto;
+    
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    
+    
+}

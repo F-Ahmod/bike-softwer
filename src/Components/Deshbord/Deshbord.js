@@ -4,8 +4,6 @@ import { BiHome } from "react-icons/bi";
 import { RiMotorbikeLine } from "react-icons/ri";
 import { BiPurchaseTagAlt } from "react-icons/bi";
 import { GiJerusalemCross } from "react-icons/gi";
-import { GiExpense } from "react-icons/gi";
-import { BiPurchaseTag } from "react-icons/bi";
 import { GiCrescentStaff } from "react-icons/gi";
 import { Link, Outlet } from "react-router-dom";
 import useFirebase from "../../Firebase/useFirebase";
@@ -82,64 +80,64 @@ const Deshbord = () => {
                     <Link className="nnav-link" to="/newPurchacs">
                       b. New purchase
                     </Link>
+                    <Link className="nnav-link  " to="/buyForm">
+                      c. Bike purchase
+                    </Link>
                   </Accordion.Body>
                 </Accordion.Item>
 
                 {/* <Accordion.Item eventKey="2" className="mb-4">
                   <Accordion.Header>
-                    <GiJerusalemCross className="me-4" /> Bike sale
+                    <GiExpense className="me-4"/>
+                    Expense
                   </Accordion.Header>
-
                   <Accordion.Body>
-                    
-                    <Accordion.Item eventKey="2" className="mb-4">
-                      <Accordion.Header>
-                        <GiJerusalemCross className="me-4" /> A sale
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <Link className="nnav-link" to="/BuyerDetails">
-                          Buyer details
-                        </Link>
-                        <Link className="nnav-link" to="/BuyerDetails">
-                          Buyer details
-                        </Link>
-                      </Accordion.Body>
-                    </Accordion.Item>
-
-
-                    <Accordion.Item eventKey="2" className="mb-4">
-                      <Accordion.Header>
-                        <GiJerusalemCross className="me-4" /> A sale
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <Link className="nnav-link" to="/BuyerDetails">
-                          Buyer details
-                        </Link>
-                        <Link className="nnav-link" to="/BuyerDetails">
-                          Buyer details
-                        </Link>
-                      </Accordion.Body>
-                    </Accordion.Item>
+                    <Link className="nnav-link" to="/dataInputUI">
+                     a. All Purchase Expenses
+                    </Link>
+                    <Link className="nnav-link" to="/dataInput">
+                     b. Add Purchase Expense
+                    </Link>
                   </Accordion.Body>
                 </Accordion.Item> */}
+              </Accordion>
 
-                <Accordion.Item eventKey="2" className="mb-4">
+              <Accordion defaultActiveKey="0">
+                <Accordion.Item eventKey="1" className="mb-4">
                   <Accordion.Header>
-                    <GiExpense className="me-4" /> Bike Expences
+                    <GiJerusalemCross className="me-4" />Expense
                   </Accordion.Header>
+
                   <Accordion.Body>
-                    <Link className="nnav-link" to="/dataInput">
-                      Add Purchase Expense
+                    <Accordion.Item eventKey="1" className="mb-4">
+                      <Accordion.Header >
+                       a. Purchase Expense
+                      </Accordion.Header>
+                      <Link className="av-link" to="/dataInputUI">
+                     i. All Purchase Expenses
                     </Link>
-                    <Link className="nnav-link" to="/dataInputUI">
-                      All Purchase Expenses
+                    <Link className="av-link" to="/dataInput">
+                     ii. Add Purchase Expense
                     </Link>
+                    </Accordion.Item>
+
+                    <Accordion.Item eventKey="1" className="mb-4">
+                      <Accordion.Header>
+                       b. Sales Expense
+                      </Accordion.Header>
+                      <Link className="av-link" to="/allSalesExpenses">
+                     i. All Sales Expenses
+                      </Link>
+                      <Link className="av-link" to="/addSaleExp">
+                     ii. Add Sales Expenses
+                      </Link>
+                    </Accordion.Item>
                   </Accordion.Body>
                 </Accordion.Item>
 
                 <Accordion.Item eventKey="3" className=" mb-3 ">
                   <Accordion.Header className="">
-                  <GiCrescentStaff className="me-4 " />
+                    <GiCrescentStaff className="me-4 " />
                     Manage Staff
                   </Accordion.Header>
                   <Accordion.Body>
@@ -154,11 +152,11 @@ const Deshbord = () => {
               </Accordion>
 
               <ul className="navbar-nav">
-                <li className="nav-item mb-5">
+                {/* <li className="nav-item mb-5">
                   <Link className="nav-link  " to="/buyForm">
                     <BiPurchaseTag className="me-2 text-dark" /> Bike purchase
                   </Link>
-                </li>
+                </li> */}
 
                 {/* <li className="nav-item mb-3">
                   <Link className="nav-link" to="/makeadmin">
@@ -166,7 +164,6 @@ const Deshbord = () => {
                   </Link>
                 </li> */}
               </ul>
-              
 
               <hr className="navbar-divider opacity-20" />
 

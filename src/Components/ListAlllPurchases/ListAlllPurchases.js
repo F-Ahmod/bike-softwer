@@ -10,7 +10,6 @@ const ListAlllPurchases = () => {
     fetch("https://bike-soft.herokuapp.com/purchase")
       .then((data) => data.json())
       .then((res) => {
-        console.log(res);
         setPurchases(res);
         setLoding(false);
         setSarch(res);

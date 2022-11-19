@@ -10,10 +10,7 @@ const DasHader = () => {
   useEffect(() => {
     fetch("https://bike-soft.herokuapp.com/purchase")
       .then((data) => data.json())
-
       .then((res) => {
-        console.log(res);
-
         setPurchases(res);
       });
   }, []);

@@ -26,20 +26,31 @@ ChartJS.register(
 );
 const GrapChat = () => {
   const [looding,setLooding]=useState(true)
-
-
  const  [monthData,setMonthData]=useState([]);
-  
+ 
+  const month = async  () => {
+    setLooding(true)
+    const a = await axios.post("https://bike-soft.herokuapp.com/monthPurchase",{month:"November"});
+    //  console.log(a);
+    setMonthData(a.data);
+    setLooding(false)
+  }
+ //console.log(monthData);
+  useEffect(() => {  
+    month()
+
+  }, []);
   const [data, setData] = useState({
     labels: [
       "Jan",
+      "june",
       "dec"
       
     ],
     datasets: [
       {
         label: "First Dataset",
-        data: [monthData.length,monthData.length+3],
+        data: [monthData.length,monthData.length+3,monthData.length+1],
         backgroundColor: "AliceBlue",
         borderColor: "green",
         tension: 0.4,
@@ -52,23 +63,8 @@ const GrapChat = () => {
     ],
   });
 
-
   
-  const month = async  () => {
-    setLooding(true)
-    const a = await axios.post("https://bike-soft.herokuapp.com/monthPurchase",{month:"November"});
-    // console.log(a);
-    setMonthData(a.data);
-    setLooding(false)
-  }
- 
-  useEffect(() => {
-    
-    month()
-  }, []);
 
-  
-console.log(monthData.length);
   const [secendData, setSecendData] = useState({
     labels: [
         "Jan",
