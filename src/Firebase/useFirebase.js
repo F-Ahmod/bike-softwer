@@ -11,11 +11,13 @@ import {
 } from "firebase/auth";
 // import firebase from 'firebase';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const app = intializeFirebase();
 
 const storage = getStorage(app);
 const useFirebase = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
@@ -71,18 +73,22 @@ const useFirebase = () => {
     });
   }, [auth]);
 
-  const leLogout = () => {
+  const Logout = () => {
+   
     signOut(auth)
       .then(() => {
         setUser({});
       })
+
       .catch((err) => {
         // console.log(err);
       })
+
       .finally(() => setLoading(false));
+    return navigate("/login");
   };
 
-  const handleUserRegister = (email, password) => {
+  const handleUserRegister = (name, email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setUser(result.user);
@@ -105,7 +111,7 @@ const useFirebase = () => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((result) => (result));
+      .then((result) => result);
   };
 
   // console.log(admin);
@@ -115,13 +121,12 @@ const useFirebase = () => {
     admin,
     singinWithGoogle,
     user,
-    leLogout,
+    Logout,
     handleUserRegister,
     loginUser,
     authError,
     loading,
     storage,
-    
   };
 };
 

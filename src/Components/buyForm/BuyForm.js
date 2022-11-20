@@ -5,13 +5,13 @@ import Alert from "react-bootstrap/Alert";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../Firebase/useFirebase";
 import "./BuyForm.css";
-import { v4 } from "uuid";
+//import { v4 } from "uuid";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router";
 const BuyForm = ({ updatedBike }) => {
   const { storage } = useFirebase();
-  const [imageUpload, setImageUpload] = useState(null);
-  const [imageUrls, setImageUrls] = useState([]);
+  //const [imageUpload, setImageUpload] = useState(null);
+  //const [imageUrls, setImageUrls] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [bikes, setBikes] = useState([]);
   const [message, setMessage] = useState("");

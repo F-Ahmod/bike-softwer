@@ -12,7 +12,7 @@ import Accordion from "react-bootstrap/Accordion";
 import "./Deshbord.css";
 
 const Deshbord = () => {
-  const { leLogout, user } = useFirebase();
+  const { Logout, user } = useFirebase();
 
   return (
     <div>
@@ -173,7 +173,7 @@ const Deshbord = () => {
                 <li className="nav-item">
                   {user?.email ? (
                     <>
-                      <button className="nav-link" onClick={leLogout}>
+                      <button className="nav-link" onClick={Logout}>
                         <i className="bi bi-box-arrow-left"></i> Logout
                       </button>
                     </>

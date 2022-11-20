@@ -32,9 +32,9 @@ function App() {
       {/* <Router> */}
       {/* <Header></Header> */}
       <Routes>
-        <Route element={<PrivateRoutes />}>
+        {/* <Route element={<PrivateRoutes />}>
           <Route element={<Home />} />
-        </Route>
+        </Route> */}
 
         <Route path="/home" element={<Home />} />
 
@@ -42,26 +42,30 @@ function App() {
         <Route path="/register" element={<Registration />} />
         <Route path="/bookplan/:planId" element={<BookPlan />} />
         <Route path="/forgetPassword" element={<ForgetPassword />} />
-
-        <Route path="/" element={<Deshbord />}>
-          <Route index element={<DasHader />} />
-          <Route path="dasHader" element={<DasHader />} />
-          <Route path="/buyForm" element={<BuyForm />} />
-          <Route path="/addSaleExp" element={<AddSaleExpense />} />
-          <Route path="/invoice/:_id" element={<Invoice />} />
-          <Route path="/upDateBike/:_id" element={<UpDateBike />} />
-          <Route path="/updateForm/:_id" element={<UpdateForm />} />
-          <Route path="/grapChat" element={<GrapChat />} />
-          <Route path="/listAlllPurchases" element={<ListAlllPurchases />} />
-          <Route path="/newPurchacs" element={<NewPurchacs />} />
-          <Route path="/singleListPurchase" element={<SingleListPurchase />} />
-          <Route path="AllBike" element={<AllBike />} />
-          <Route path="AddBike" element={<AddBike />} />
-          <Route path="dataInput" element={<DataInput />} />
-          <Route path="dataInputUI" element={<DataInputUI />} />
-          <Route path="allSalesExpenses" element={<AllSalesExpenses/>} />
-          <Route path="makeStaff" element={<MakeStaff />} />
-          <Route path="listAllStafff" element={< LisstAllStaff/>} />
+        <Route element={<PrivateRoutes />}>
+          <Route path="/" element={<Deshbord />}>
+            <Route index element={<DasHader />} />
+            <Route path="dasHader" element={<DasHader />} />
+            <Route path="/buyForm" element={<BuyForm />} />
+            <Route path="/addSaleExp" element={<AddSaleExpense />} />
+            <Route path="/invoice/:_id" element={<Invoice />} />
+            <Route path="/upDateBike/:_id" element={<UpDateBike />} />
+            <Route path="/updateForm/:_id" element={<UpdateForm />} />
+            <Route path="/grapChat" element={<GrapChat />} />
+            <Route path="/listAlllPurchases" element={<ListAlllPurchases />} />
+            <Route path="/newPurchacs" element={<NewPurchacs />} />
+            <Route
+              path="/singleListPurchase"
+              element={<SingleListPurchase />}
+            />
+            <Route path="AllBike" element={<AllBike />} />
+            <Route path="AddBike" element={<AddBike />} />
+            <Route path="dataInput" element={<DataInput />} />
+            <Route path="dataInputUI" element={<DataInputUI />} />
+            <Route path="allSalesExpenses" element={<AllSalesExpenses />} />
+            <Route path="makeStaff" element={<MakeStaff />} />
+            <Route path="listAllStafff" element={<LisstAllStaff />} />
+          </Route>
         </Route>
       </Routes>
       {/* </Router> */}

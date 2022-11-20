@@ -25,32 +25,37 @@ ChartJS.register(
   Filler
 );
 const GrapChat = () => {
-  const [looding,setLooding]=useState(true)
- const  [monthData,setMonthData]=useState([]);
- 
-  const month = async  () => {
-    setLooding(true)
-    const a = await axios.post("https://bike-soft.herokuapp.com/monthPurchase",{month:"November"});
-    //  console.log(a);
-    setMonthData(a.data);
-    setLooding(false)
-  }
- //console.log(monthData);
-  useEffect(() => {  
-    month()
+  const [looding, setLooding] = useState(true);
+  const [monthData, setMonthData] = useState([]);
+  const [values, setValues] = useState([]);
 
+  const month = async () => {
+    setLooding(true);
+    const a = await axios.post("https://bike-soft.herokuapp.com/monthPurchase");
+    let months = a?.data[1]?.months;
+    let values = a?.data[0]?.sellValue;
+    // convet to arrary of object
+    let arr = [];
+    for (const property in values) {
+      arr.push(values[property]);
+    }
+    setValues(arr);
+    let sorted = months.sort((a, b) => a.month - b.month);
+    setMonthData(sorted);
+    setLooding(false);
+  };
+
+  useEffect(() => {
+    month();
   }, []);
-  const [data, setData] = useState({
-    labels: [
-      "Jan",
-      "june",
-      "dec"
-      
-    ],
+
+  const data = {
+    // sorted by month
+    labels: monthData,
     datasets: [
       {
-        label: "First Dataset",
-        data: [monthData.length,monthData.length+3,monthData.length+1],
+        label: "Month wise purchase",
+        data: values,
         backgroundColor: "AliceBlue",
         borderColor: "green",
         tension: 0.4,
@@ -61,20 +66,14 @@ const GrapChat = () => {
         showLine: true,
       },
     ],
-  });
-
-  
+  };
 
   const [secendData, setSecendData] = useState({
-    labels: [
-        "Jan",
-        
-        "Dec",
-      ],
+    labels: ["Jan", "Dec"],
     datasets: [
       {
         label: "secend Dataset",
-        data: [monthData.length,monthData.length+10],
+        data: [monthData.length, monthData.length + 10],
         backgroundColor: "AliceBlue",
         // borderColor: "green",
         tension: 0.4,
@@ -87,15 +86,11 @@ const GrapChat = () => {
     ],
   });
   const [thredData, setThredData] = useState({
-    labels: [
-        "Jan",
-        "June",
-        "Dec"
-      ],
+    labels: ["Jan", "June", "Dec"],
     datasets: [
       {
         label: "Thred Dataset",
-        data: [10,  30,  51, 82, 31, 59,  73,58],
+        data: [10, 30, 51, 82, 31, 59, 73, 58],
         backgroundColor: "AliceBlue",
         // borderColor: "green",
         tension: 0.4,
@@ -107,26 +102,28 @@ const GrapChat = () => {
       },
     ],
   });
-  if(looding){
-    return
+  if (looding) {
+    return;
   }
+
   return (
-    <div className="row">
-    <div className="col-md-8" >
-      <Line data={data}></Line>
-    </div>
-    <div className="col-md-4">
-     
-     <div >
-     <Line data={secendData}></Line>
-     </div>
-    
-     <div >
-     <Line data={thredData}></Line>
-     </div>
-     </div>
-     
-    
+    <div >
+      {!looding && (
+        <>
+          <div >
+            <Line data={data}></Line>
+          </div>
+          {/* <div className="col-md-4">
+            <div>
+              <Line data={secendData}></Line>
+            </div>
+
+            <div>
+              <Line data={thredData}></Line>
+            </div>
+          </div> */}
+        </>
+      )}
     </div>
   );
 };

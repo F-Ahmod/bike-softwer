@@ -13,7 +13,7 @@ const Registration = () => {
   const onSubmit = (data) => {
     // console.log(data);
     handleUserRegister(data.name, data.email, data.password);
-    return navigate("/");
+    return navigate("/dasHader");
   };
 
   return (
